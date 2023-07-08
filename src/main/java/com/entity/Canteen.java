@@ -8,7 +8,7 @@ public class Canteen {
   private String rcaddress;
   private String rcintroduce;
   private String rcphone;
-  private java.sql.Time rctime;
+  private String rctime;
   private double rcprice;
   private String rccity;
   private String rcpicture;
@@ -59,11 +59,11 @@ public class Canteen {
   }
 
 
-  public java.sql.Time getRctime() {
+  public String getRctime() {
     return rctime;
   }
 
-  public void setRctime(java.sql.Time rctime) {
+  public void setRctime(String rctime) {
     this.rctime = rctime;
   }
 

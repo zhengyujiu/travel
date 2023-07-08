@@ -7,7 +7,7 @@ public class Comment {
   private int uid;
   private int aid;
   private int uscore;
-  private java.sql.Date cdate;
+  private String cdate;
   private String ccontent;
 
 
@@ -47,11 +47,11 @@ public class Comment {
   }
 
 
-  public java.sql.Date getCdate() {
+  public String getCdate() {
     return cdate;
   }
 
-  public void setCdate(java.sql.Date cdate) {
+  public void setCdate(String cdate) {
     this.cdate = cdate;
   }
 

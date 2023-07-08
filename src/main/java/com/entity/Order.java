@@ -9,8 +9,8 @@ public class Order {
   private int rcid;
   private int uid;
   private int hid;
-  private java.sql.Date ostartTime;
-  private java.sql.Date oendTime;
+  private String ostartTime;
+  private String oendTime;
   private double ototalPrice;
 
 
@@ -68,20 +68,20 @@ public class Order {
   }
 
 
-  public java.sql.Date getOstartTime() {
+  public String getOstartTime() {
     return ostartTime;
   }
 
-  public void setOstartTime(java.sql.Date ostartTime) {
+  public void setOstartTime(String ostartTime) {
     this.ostartTime = ostartTime;
   }
 
 
-  public java.sql.Date getOendTime() {
+  public String getOendTime() {
     return oendTime;
   }
 
-  public void setOendTime(java.sql.Date oendTime) {
+  public void setOendTime(String oendTime) {
     this.oendTime = oendTime;
   }
 
