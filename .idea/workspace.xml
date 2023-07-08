@@ -10,10 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/OrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Canteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Canteen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/SqlSessionFactoryUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,7 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\software\apache-maven-3.6.1-bin\apache-maven-3.6.1\mvn_resp" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../software/apache-maven-3.6.1-bin/apache-maven-3.6.1" />
         <option name="userSettingsFile" value="D:\software\apache-maven-3.6.1-bin\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -73,6 +75,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.16113281&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;69266c67e75c946ef9b4144b0554326d&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -205,7 +208,17 @@
       <workItem from="1688782692030" duration="532000" />
       <workItem from="1688783848639" duration="27000" />
       <workItem from="1688783889510" duration="186000" />
-      <workItem from="1688784090259" duration="1545000" />
+      <workItem from="1688784090259" duration="1565000" />
+      <workItem from="1688785688089" duration="128000" />
+      <workItem from="1688785862452" duration="14000" />
+      <workItem from="1688785884562" duration="552000" />
+      <workItem from="1688786448546" duration="25000" />
+      <workItem from="1688786490375" duration="15000" />
+      <workItem from="1688786513424" duration="215000" />
+      <workItem from="1688786757553" duration="428000" />
+      <workItem from="1688787238550" duration="46000" />
+      <workItem from="1688787392698" duration="123000" />
+      <workItem from="1688787525419" duration="142000" />
     </task>
     <servers />
   </component>
