@@ -9,9 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="cccc">
+    <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="ccccasdas">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/orderForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/orderForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/orderForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/order/InsertOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/a.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -64,7 +70,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/新建文件夹/travel/src/main/java/pojo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/新建文件夹/travel/src/main/webapp/statics/js&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,6 +91,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\js" />
+      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\css" />
       <recent name="D:\新建文件夹\travel\src\main\webapp\statics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -93,7 +101,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.84" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.84" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="travel:war exploded">
           <settings>
@@ -216,7 +223,15 @@
       <workItem from="1688787238550" duration="46000" />
       <workItem from="1688787392698" duration="123000" />
       <workItem from="1688787525419" duration="142000" />
-      <workItem from="1688795046092" duration="2181000" />
+      <workItem from="1688795046092" duration="2706000" />
+      <workItem from="1688797880114" duration="86000" />
+      <workItem from="1688797977453" duration="464000" />
+      <workItem from="1688799244709" duration="10000" />
+      <workItem from="1688799268972" duration="189000" />
+      <workItem from="1688799566721" duration="3557000" />
+      <workItem from="1688804693986" duration="163000" />
+      <workItem from="1688804893437" duration="339000" />
+      <workItem from="1688805443374" duration="1115000" />
     </task>
     <task id="LOCAL-00001" summary="cccc">
       <created>1688797230086</created>
@@ -225,7 +240,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688797230086</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ccccasdas">
+      <created>1688797255801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688797255801</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ccccasdas">
+      <created>1688797267206</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688797267206</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +274,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="cccc" />
-    <option name="LAST_COMMIT_MESSAGE" value="cccc" />
+    <MESSAGE value="ccccasdasasd" />
+    <MESSAGE value="ccccasdas" />
+    <option name="LAST_COMMIT_MESSAGE" value="ccccasdas" />
   </component>
 </project>
