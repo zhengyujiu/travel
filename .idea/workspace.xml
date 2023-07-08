@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="">
+    <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="cccc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/a.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,8 +216,16 @@
       <workItem from="1688787238550" duration="46000" />
       <workItem from="1688787392698" duration="123000" />
       <workItem from="1688787525419" duration="142000" />
-      <workItem from="1688795046092" duration="2075000" />
+      <workItem from="1688795046092" duration="2181000" />
     </task>
+    <task id="LOCAL-00001" summary="cccc">
+      <created>1688797230086</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688797230086</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,5 +244,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="cccc" />
+    <option name="LAST_COMMIT_MESSAGE" value="cccc" />
   </component>
 </project>
