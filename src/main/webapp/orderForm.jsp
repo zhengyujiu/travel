@@ -5,11 +5,42 @@
 <!doctype html>
 <html>
 <head>
+    <%
+        String uname=request.getParameter("uname");
+        String uid=request.getParameter("uid");
+        String aname=request.getParameter("aname");
+        String aprice=request.getParameter("aprice");
+        String hname=request.getParameter("hname");
+        String rid=request.getParameter("rid");
+        String rprice=request.getParameter("rprice");
+        String rcname=request.getParameter("rcname");
+        String rtype=request.getParameter("rtype");
+        rprice="100";
+        aprice="100";
+        request.setAttribute("uname",uname);
+        request.setAttribute("uid",uid);
+        request.setAttribute("aname",aname);
+        request.setAttribute("aprice",aprice);
+        request.setAttribute("hname",hname);
+        request.setAttribute("rid",rid);
+        request.setAttribute("rprice",rprice);
+        request.setAttribute("rcname",rcname);
+        request.setAttribute("rtype",rtype);
+
+    %>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>生成订单</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
     <link href="/statics/bootstrap-5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/statics/css/bootstrap-datetimepicker.min.css">
+    <script src="statics/jquery-3.6.1.js"></script>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/statics/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/statics/js/orderForm.js"></script>
+    <script src="/statics/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -55,10 +86,67 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
+        #dateErrorInfo{
+            font-size: 10px;
+            color: red;
+
+        }
     </style>
+
+    <script>
+        $(function(){
+            $('#datetimepicker1').datetimepicker({
+                language: 'zh-CN', // 中文语言包
+                autoclose: 1, // 选中日期后自动关闭
+                format: 'yyyy-mm-dd', // 日期格式
+                minView: "month", // 最小日期显示单元，这里最小显示月份界面，即可以选择到日
+                todayBtn: 1, // 显示今天按钮
+                todayHighlight: 1, // 显示今天高亮
+            });
+            $('#datetimepicker2').datetimepicker({
+                language: 'zh-CN', // 中文语言包
+                autoclose: 1, // 选中日期后自动关闭
+                format: 'yyyy-mm-dd', // 日期格式
+                minView: "month", // 最小日期显示单元，这里最小显示月份界面，即可以选择到日
+                todayBtn: 1, // 显示今天按钮
+                todayHighlight: 1, // 显示今天高亮
+            });
+
+            function countPrice(){
+                var ostartDay=$("#datetimepicker1").val();
+                var oendDay=$("#datetimepicker2").val();
+                var timeDiff=new Date(oendDay).getTime()-new Date(ostartDay).getTime();
+                var days=Math.ceil(timeDiff/(1000*3600*24))+1;
+                if ($('#datetimepicker1').val()!=null&&$('#datetimepicker2').val()!=null&&days>=1){
+                    document.getElementById('dateErrorInfo').innerHTML=null;
+                    //当两个日期都不为空，且日期选择正确时，为总价格赋值，并让确定按钮可以提交
+                    if ($('#hname').val()!=null){
+                        $('#ototalPrice').val(days*(${rprice}+${aprice}));
+                    }else {
+                        $('#ototalPrice').val(days*${aprice});
+                    }
+                    $('#confirmButton').attr("disabled",false);
+                }else {
+                    //当用户没有选择日期时不提示错误信息
+                    if ($('#datetimepicker1').val()==""&&('#datetimepicker2').val()==""){
+                        document.getElementById('dateErrorInfo').innerHTML=null;
+                    }else {
+                        //当用户选择了日期，且选择错误时提供错误信息
+                        document.getElementById('dateErrorInfo').innerHTML="日期选择有误";
+                    }
+                    $('#ototalPrice').val(null);
+                    $('#confirmButton').attr("disabled",true);
+                }
+            }
+            setInterval(countPrice,100);
+        })
+
+
+    </script>
     <link href="/statics/css/orderForm.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+
 <div class="container">
     <main>
 
@@ -68,70 +156,62 @@
 
         <div class="row g-5  d-flex justify-content-center align-items-center" >
             <div class="col-md-7 col-lg-8">
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" action="">
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="userId" class="form-label">用户ID</label>
-                            <input type="text" class="form-control" id="userId" value="1" readonly="readonly">
+                            <input type="text" class="form-control" id="userId" value="${uid}" readonly="readonly">
                         </div>
 
                         <div class="col-sm-6">
                             <label for="uname" class="form-label">用户名</label>
-                            <input type="text" class="form-control" id="uname" name="uname" value="郑渝久" >
+                            <input type="text" class="form-control" id="uname" name="uname" value="${uname}" >
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-6">
                             <label for="aname" class="form-label">景点名称</label>
-                            <input type="text" class="form-control" name="aname" id="aname" readonly="readonly" value="1">
+                            <input type="text" class="form-control" name="aname" id="aname" readonly="readonly" value="${aname}">
                         </div>
-
-                        <div class="col-12">
-                            <label for="hname" class="form-label">酒店名称</label>
-                            <input type="text" class="form-control" id="hname" name="hname"  readonly="readonly" value="1">
+                        <div class="col-6">
+                            <label for="aprice" class="form-label">景点单价/日</label>
+                            <input type="text" class="form-control" name="aprice" id="aprice" readonly="readonly" value="${aprice}">
                         </div>
-
+                        <div class="col-3">
+                            <label for="hname" class="form-label" >酒店名称</label>
+                            <input type="text" class="form-control" id="hname" name="hname"  readonly="readonly" value="${hname}" placeholder="空">
+                        </div>
+                        <div class="col-3">
+                                <label for="rid" class="form-label">房间号</label>
+                            <input type="text" class="form-control" id="rid" name="rid"  readonly="readonly" value="${rid}" placeholder="空">
+                        </div>
+                        <div class="col-3">
+                            <label for="rtype" class="form-label">房间类型</label>
+                            <input type="text" class="form-control" id="rtype" name="rtype"  readonly="readonly" value="${rid}" placeholder="空">
+                        </div>
+                        <div class="col-3">
+                            <label for="rprice" class="form-label">房间单价/日</label>
+                            <input type="text" class="form-control" id="rprice" name="rprice"  readonly="readonly" value="${rprice}" placeholder="空">
+                        </div>
                         <div class="col-12">
                             <label for="rcname" class="form-label">餐厅名称</label>
-                            <input type="text" class="form-control" id="rcname" name="rcname"  readonly="readonly" value="1">
+                            <input type="text" class="form-control" id="rcname" name="rcname"  readonly="readonly" value="${rcname}" placeholder="空">
                         </div>
-
-                        <div class="col-md-6">
-                            <label for="country" class="form-label">Country</label>
-                            <select class="form-select" id="country" required>
-                                <option value="">Choose...</option>
-                                <option>United States</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid country.
-                            </div>
+                        <div class="col-6 ">
+                            <label for="datetimepicker1" class="form-label">起始日期</label>
+                            <input class="form-control" type="text"  id="datetimepicker1" name="ostartTime" >
                         </div>
-
-
-                        <div class="col-sm-6">
-
+                        <div class="col-6 ">
+                            <label for="datetimepicker2" class="form-label">截止日期</label>
+                            <input class="form-control" type="text"  id="datetimepicker2" name="oendTime" >
                         </div>
-
-                        <div class="col-sm-6">
-
+                        <span id="dateErrorInfo" class="d-flex justify-content-center align-items-center"></span>
+                        <div class="col-12">
+                            <label for="ototalPrice" class="form-label">总费用</label>
+                            <input type="text" class="form-control" name="ototalPrice" id="ototalPrice" readonly="readonly">
                         </div>
+                        <div class="my-4"></div>
+                        <button class="w-100 btn btn-primary btn-lg" type="submit" id="confirmButton" disabled>确认支付</button>
                     </div>
-
-                    <hr class="my-4">
-
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
-                        <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="save-info">
-                        <label class="form-check-label" for="save-info">Save this information for next time</label>
-                    </div>
-
-                    <hr class="my-4">
-                    <hr class="my-4">
-
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
                 </form>
             </div>
         </div>
@@ -143,7 +223,7 @@
 </div>
 
 
-<script src="/statics/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="/statics/js/orderForm.js"></script>
+
+
 </body>
 </html>
