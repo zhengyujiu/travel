@@ -19,7 +19,6 @@ public class SqlSessionFactoryUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	
 	}
 	
 	public static SqlSession getsqlSessionFactory() {

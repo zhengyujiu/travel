@@ -1,28 +1,34 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class ArcDistance {
 
-  private int rcid;
-  private int aid;
+  private Integer rcid;
+  private Integer aid;
   private String cityName;
-  private int distance;
+  private Integer distance;
 
 
-  public int getRcid() {
+  public Integer getRcid() {
     return rcid;
   }
 
-  public void setRcid(int rcid) {
+  public void setRcid(Integer rcid) {
     this.rcid = rcid;
   }
 
 
-  public int getAid() {
+  public Integer getAid() {
     return aid;
   }
 
-  public void setAid(int aid) {
+  public void setAid(Integer aid) {
     this.aid = aid;
   }
 
@@ -36,11 +42,11 @@ public class ArcDistance {
   }
 
 
-  public int getDistance() {
+  public Integer getDistance() {
     return distance;
   }
 
-  public void setDistance(int distance) {
+  public void setDistance(Integer distance) {
     this.distance = distance;
   }
 

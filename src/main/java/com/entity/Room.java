@@ -1,29 +1,35 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Room {
 
-  private int rid;
-  private int hid;
+  private Integer rid;
+  private Integer hid;
   private double rprice;
   private String rtype;
-  private int rstate;
+  private Integer rstate;
 
 
-  public int getRid() {
+  public Integer getRid() {
     return rid;
   }
 
-  public void setRid(int rid) {
+  public void setRid(Integer rid) {
     this.rid = rid;
   }
 
 
-  public int getHid() {
+  public Integer getHid() {
     return hid;
   }
 
-  public void setHid(int hid) {
+  public void setHid(Integer hid) {
     this.hid = hid;
   }
 
@@ -46,11 +52,11 @@ public class Room {
   }
 
 
-  public int getRstate() {
+  public Integer getRstate() {
     return rstate;
   }
 
-  public void setRstate(int rstate) {
+  public void setRstate(Integer rstate) {
     this.rstate = rstate;
   }
 

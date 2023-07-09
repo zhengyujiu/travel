@@ -18,30 +18,27 @@
         String aid=request.getParameter("aid");
         String hid=request.getParameter("hid");
         String rcid=request.getParameter("rcid");
+
         rprice="100";
         aprice="100";
         uid="1";
-        aid="1";
-        rid="101";
-        rcid="1";
+        aid="2";
         uname="zhangsan";
-
-        request.getSession().setAttribute("aid",aid);
-        request.getSession().setAttribute("hid",hid);
-        request.getSession().setAttribute("rcid",rcid);
+        rid="3";
 
         request.setAttribute("uname",uname);
         request.setAttribute("uid",uid);
-        request.setAttribute("rid",rid);
         request.setAttribute("aname",aname);
         request.setAttribute("aprice",aprice);
         request.setAttribute("hname",hname);
+        request.setAttribute("rid",rid);
         request.setAttribute("rprice",rprice);
         request.setAttribute("rcname",rcname);
         request.setAttribute("rtype",rtype);
     %>
 <%--现在能通过表单传过去的属性是：rid uid ostart_time oend_time ototal_price --%>
 <%--    还缺 aid hid rcid--%>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>生成订单</title>
@@ -104,6 +101,7 @@
 
         }
     </style>
+
     <script>
         $(function(){
             $('#datetimepicker1').datetimepicker({
@@ -160,12 +158,14 @@
 
 <div class="container">
     <main>
+
         <div class="py-5 text-center">
             <h2>确认订单</h2>
         </div>
+
         <div class="row g-5  d-flex justify-content-center align-items-center" >
             <div class="col-md-7 col-lg-8">
-                <form class="needs-validation" action="/insertOrder" method="get">
+                <form class="needs-validation" action="/insertOrder">
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="uid" class="form-label">用户ID</label>

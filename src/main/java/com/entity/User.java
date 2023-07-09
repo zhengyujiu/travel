@@ -1,24 +1,30 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class User {
 
-  private int uid;
+  private Integer uid;
   private String uname;
   private String upassword;
   private String usex;
-  private int uage;
-  private int utype;
+  private Integer uage;
+  private Integer utype;
   private String uphone;
   private String uemail;
   private double ufunds;
 
 
-  public int getUid() {
+  public Integer getUid() {
     return uid;
   }
 
-  public void setUid(int uid) {
+  public void setUid(Integer uid) {
     this.uid = uid;
   }
 
@@ -50,20 +56,20 @@ public class User {
   }
 
 
-  public int getUage() {
+  public Integer getUage() {
     return uage;
   }
 
-  public void setUage(int uage) {
+  public void setUage(Integer uage) {
     this.uage = uage;
   }
 
 
-  public int getUtype() {
+  public Integer getUtype() {
     return utype;
   }
 
-  public void setUtype(int utype) {
+  public void setUtype(Integer utype) {
     this.utype = utype;
   }
 

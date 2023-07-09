@@ -1,47 +1,53 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Suggestion {
 
-  private int sgid;
-  private int rcid;
-  private int hid;
-  private int aid;
+  private Integer sgid;
+  private Integer rcid;
+  private Integer hid;
+  private Integer aid;
   private double sgprice;
 
 
-  public int getSgid() {
+  public Integer getSgid() {
     return sgid;
   }
 
-  public void setSgid(int sgid) {
+  public void setSgid(Integer sgid) {
     this.sgid = sgid;
   }
 
 
-  public int getRcid() {
+  public Integer getRcid() {
     return rcid;
   }
 
-  public void setRcid(int rcid) {
+  public void setRcid(Integer rcid) {
     this.rcid = rcid;
   }
 
 
-  public int getHid() {
+  public Integer getHid() {
     return hid;
   }
 
-  public void setHid(int hid) {
+  public void setHid(Integer hid) {
     this.hid = hid;
   }
 
 
-  public int getAid() {
+  public Integer getAid() {
     return aid;
   }
 
-  public void setAid(int aid) {
+  public void setAid(Integer aid) {
     this.aid = aid;
   }
 

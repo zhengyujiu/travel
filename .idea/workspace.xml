@@ -10,13 +10,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="44">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/RegisterServet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/jquery-3.6.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/HelloServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/entity/Collections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mapper/OrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/orderForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/quick-website.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/imgs/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/feather.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/quick-website.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/svg-injector.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/RegisterServet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/RegisterServet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/order/InsertOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/order/InsertOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/AhDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/AhDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/ArcDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/ArcDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Attraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Attraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Canteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Canteen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Collection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Suggestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Suggestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utils/SqlSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/SqlSessionFactoryUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orderForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orderForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +54,19 @@
       <list>
         <option value="FxmlFile" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="mybatis-mapper" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/statics/bootstrap-5.3.0/css/bootstrap.css" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/statics/bootstrap-5.3.0/css/bootstrap.rtl.css" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -64,38 +96,41 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/新建文件夹/travel/src/main/webapp/statics&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.16113281&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;69266c67e75c946ef9b4144b0554326d&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/新建文件夹/travel/src/main/webapp/statics/js",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.16113281",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.general",
+    "spring.configuration.checksum": "69266c67e75c946ef9b4144b0554326d",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\新建文件夹\travel\src\main\webapp\statics" />
       <recent name="D:\新建文件夹\travel\src\main\webapp\statics\js" />
       <recent name="D:\新建文件夹\travel\src\main\webapp\statics\css" />
+      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\imgs" />
+      <recent name="D:\新建文件夹\travel\src\main\webapp" />
+      <recent name="D:\新建文件夹\travel\src\main\webapp\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\新建文件夹\travel\src\main\webapp\statics" />
@@ -249,7 +284,15 @@
       <workItem from="1688816522382" duration="6637000" />
       <workItem from="1688861130435" duration="114000" />
       <workItem from="1688861750852" duration="243000" />
-      <workItem from="1688862103480" duration="488000" />
+      <workItem from="1688862103480" duration="890000" />
+      <workItem from="1688863091559" duration="750000" />
+      <workItem from="1688863856764" duration="7000" />
+      <workItem from="1688863881524" duration="3000" />
+      <workItem from="1688863895332" duration="5803000" />
+      <workItem from="1688869789761" duration="4541000" />
+      <workItem from="1688883135926" duration="5803000" />
+      <workItem from="1688890967236" duration="3080000" />
+      <workItem from="1688899387896" duration="3856000" />
     </task>
     <task id="LOCAL-00001" summary="cccc">
       <created>1688797230086</created>

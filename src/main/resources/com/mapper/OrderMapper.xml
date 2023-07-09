@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrderMapper">
+    <resultMap id="orderMap" type="order">
+        <id property="oid" column="oid"></id>
+        <result property="aid" column="aid"></result>
+        <result property="rid" column="rid"></result>
+        <result property="rcid" column="rcid"></result>
+        <result property="hid" column="hid"></result>
+        <result property="uid" column="uid"></result>
+        <result property="uid" column="uid"></result>
+        <result property="ostartTime" column="ostart_time"></result>
+        <result property="oendTime" column="oend_time"></result>
+        <result property="ototalPrice" column="ototal_price"></result>
+    </resultMap>
+
+    <!--添加订单-->
+    <insert id="insertOrder" parameterType="order">
+        insert into `order` values (null,#{aid},#{rid},#{rcid},#{uid},#{hid},#{ostartTime},#{oendTime},#{ototalPrice});
+    </insert>
+</mapper>

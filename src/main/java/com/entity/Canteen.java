@@ -1,12 +1,18 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Canteen {
 
-  private int rcid;
+  private Integer rcid;
   private String rcname;
   private String rcaddress;
-  private String rcintroduce;
+  private String rcIntegerroduce;
   private String rcphone;
   private String rctime;
   private double rcprice;
@@ -14,11 +20,11 @@ public class Canteen {
   private String rcpicture;
 
 
-  public int getRcid() {
+  public Integer getRcid() {
     return rcid;
   }
 
-  public void setRcid(int rcid) {
+  public void setRcid(Integer rcid) {
     this.rcid = rcid;
   }
 
@@ -41,12 +47,12 @@ public class Canteen {
   }
 
 
-  public String getRcintroduce() {
-    return rcintroduce;
+  public String getRcIntegerroduce() {
+    return rcIntegerroduce;
   }
 
-  public void setRcintroduce(String rcintroduce) {
-    this.rcintroduce = rcintroduce;
+  public void setRcIntegerroduce(String rcIntegerroduce) {
+    this.rcIntegerroduce = rcIntegerroduce;
   }
 
 

@@ -1,24 +1,30 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Attraction {
 
-  private int aid;
+  private Integer aid;
   private String aname;
   private String aaddress;
   private String adescription;
-  private int acommentNum;
+  private Integer acommentNum;
   private double ascore;
   private double aprice;
   private String acity;
   private String apicture;
 
 
-  public int getAid() {
+  public Integer getAid() {
     return aid;
   }
 
-  public void setAid(int aid) {
+  public void setAid(Integer aid) {
     this.aid = aid;
   }
 
@@ -50,11 +56,11 @@ public class Attraction {
   }
 
 
-  public int getAcommentNum() {
+  public Integer getAcommentNum() {
     return acommentNum;
   }
 
-  public void setAcommentNum(int acommentNum) {
+  public void setAcommentNum(Integer acommentNum) {
     this.acommentNum = acommentNum;
   }
 

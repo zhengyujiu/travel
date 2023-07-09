@@ -1,48 +1,54 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Comment {
 
-  private int cid;
-  private int uid;
-  private int aid;
-  private int uscore;
+  private Integer cid;
+  private Integer uid;
+  private Integer aid;
+  private Integer uscore;
   private String cdate;
   private String ccontent;
 
 
-  public int getCid() {
+  public Integer getCid() {
     return cid;
   }
 
-  public void setCid(int cid) {
+  public void setCid(Integer cid) {
     this.cid = cid;
   }
 
 
-  public int getUid() {
+  public Integer getUid() {
     return uid;
   }
 
-  public void setUid(int uid) {
+  public void setUid(Integer uid) {
     this.uid = uid;
   }
 
 
-  public int getAid() {
+  public Integer getAid() {
     return aid;
   }
 
-  public void setAid(int aid) {
+  public void setAid(Integer aid) {
     this.aid = aid;
   }
 
 
-  public int getUscore() {
+  public Integer getUscore() {
     return uscore;
   }
 
-  public void setUscore(int uscore) {
+  public void setUscore(Integer uscore) {
     this.uscore = uscore;
   }
 

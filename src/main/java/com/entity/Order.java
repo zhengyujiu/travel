@@ -1,69 +1,76 @@
 package com.entity;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Order {
 
-  private int oid;
-  private int aid;
-  private int rid;
-  private int rcid;
-  private int uid;
-  private int hid;
+  private Integer oid;
+  private Integer aid;
+  private Integer rid;
+  private Integer rcid;
+  private Integer uid;
+  private Integer hid;
   private String ostartTime;
   private String oendTime;
   private double ototalPrice;
 
 
-  public int getOid() {
+  public Integer getOid() {
     return oid;
   }
 
-  public void setOid(int oid) {
+  public void setOid(Integer oid) {
     this.oid = oid;
   }
 
 
-  public int getAid() {
+  public Integer getAid() {
     return aid;
   }
 
-  public void setAid(int aid) {
+  public void setAid(Integer aid) {
     this.aid = aid;
   }
 
 
-  public int getRid() {
+  public Integer getRid() {
     return rid;
   }
 
-  public void setRid(int rid) {
+  public void setRid(Integer rid) {
     this.rid = rid;
   }
 
 
-  public int getRcid() {
+  public Integer getRcid() {
     return rcid;
   }
 
-  public void setRcid(int rcid) {
+  public void setRcid(Integer rcid) {
     this.rcid = rcid;
   }
 
 
-  public int getUid() {
+  public Integer getUid() {
     return uid;
   }
 
-  public void setUid(int uid) {
+  public void setUid(Integer uid) {
     this.uid = uid;
   }
 
 
-  public int getHid() {
+  public Integer getHid() {
     return hid;
   }
 
-  public void setHid(int hid) {
+  public void setHid(Integer hid) {
     this.hid = hid;
   }
 

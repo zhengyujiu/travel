@@ -1,9 +1,15 @@
 package com.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Hotel {
 
-  private int hid;
+  private Integer hid;
   private String hname;
   private String haddress;
   private String hemail;
@@ -12,11 +18,11 @@ public class Hotel {
   private String hpicture;
 
 
-  public int getHid() {
+  public Integer getHid() {
     return hid;
   }
 
-  public void setHid(int hid) {
+  public void setHid(Integer hid) {
     this.hid = hid;
   }
 

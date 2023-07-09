@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA=Compatible" content="ie=edge">
+    <title>待办事项列表</title>
+
+    <style>
+        .todo-list {
+            width: 400px;
+
+        }
+
+        .todo-content.complete {
+            text-decoration: line-through;
+        }
+        .todo-item {
+            border-bottom: 1px dotted #ff0000;
+        }
+    </style>
+</head>
+<body>
+<select name="complete-filter" id="complete-filter" onchange="">
+    <option value="all">全部</option>
+    <option value="yes">已完成</option>
+    <option value="no">示完成</option>
+</select>
+<form action="/todo/save" method="post" autocomplete="off">
+    <input type="text" name="content" id="content" placeholder="请输入您的待办事项">
+    <input type="submit" value="添加">
+</form>
+
+<ul class="todo-list">
+    <input type="checkbox" checked>
+    #for(todo:todoList)
+    <li style="display: flex; justify-content: space-between;">
+        <div>
+            <input type="checkbox" id="todo-check-#(todo.id)" checked="checked" #if(todo.complete) checked #end>
+            <span class="todo-content #if(todo.complete) complete #end">
+            #(todo.content)
+        </span>
+        </div>
+        <span>
+            切换
+            修改
+            删除
+        </span>
+
+    </li>
+    #else
+    <div>当前还没有待办事项</div>
+    #end
+</ul>
+</body>
+</html>
