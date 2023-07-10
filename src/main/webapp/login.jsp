@@ -69,7 +69,7 @@
             if(!${empty msg}){
             $('#loginMsg').attr("visibility","visible");
         }else {
-            $('#loginMsg').attr("visibility","hidden");
+                $('#loginMsg').attr("visibility","hidden");
         }
         })
 
@@ -98,7 +98,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="请输入用户名">
+                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="请输入用户名" required>
                                 </div>
                             </div>
                             <div class="form-group mb-0">
@@ -112,9 +112,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i data-feather="key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" id="upassword" name="upassword" placeholder="请输入密码">
+                                    <input type="password" class="form-control" id="upassword" name="upassword" required placeholder="请输入密码">
                                 </div>
-                                <span style="color: red;" id="loginMsg"><small>${msg}</small></span>
+                              <small style="color: red;" id="loginMsg">${msg}</small>
                             </div>
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-block btn-primary" >登录</button></div>
