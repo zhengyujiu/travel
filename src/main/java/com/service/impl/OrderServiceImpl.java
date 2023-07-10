@@ -12,7 +12,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public String insertOrder(Order order) {
         SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
-        SqlSession session = sqlSessionFactoryUtil.getsqlSessionFactory();
+        SqlSession session = sqlSessionFactoryUtil.getsqlSession();
         OrderMapper mapper = session.getMapper(OrderMapper.class);
         int i = mapper.insertOrder(order);
         String msg = null;

@@ -21,8 +21,9 @@ public class SqlSessionFactoryUtil {
 		}
 	}
 	
-	public static SqlSession getsqlSessionFactory() {
+	public static SqlSession getsqlSession() {
 			return sqlSessionFactory.openSession(true) ;
 	}
+
 
 }

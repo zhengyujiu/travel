@@ -9,40 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="44">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/entity/Collections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mapper/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mapper/OrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/orderForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/css/quick-website.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/imgs/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/feather.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/quick-website.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/js/svg-injector.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.html" afterDir="false" />
+    <list default="true" id="c1389346-32c2-4cc4-9517-ed0bd7eebb86" name="Changes" comment="445">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/user/queryUserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/statics/imgs/loginBg.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/RegisterServet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/RegisterServet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/order/InsertOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/order/InsertOrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/AhDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/AhDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/ArcDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/ArcDistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Attraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Attraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Canteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Canteen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Collection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/Suggestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/Suggestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/utils/SqlSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utils/SqlSessionFactoryUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orderForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orderForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +36,10 @@
       <list>
         <option value="FxmlFile" />
         <option value="Jsp File" />
-        <option value="Interface" />
         <option value="mybatis-mapper" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -104,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/新建文件夹/travel/src/main/webapp/statics/js",
+    "last_opened_file_path": "D:/新建文件夹/travel/src/main/webapp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,13 +108,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\js" />
-      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\css" />
-      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\imgs" />
       <recent name="D:\新建文件夹\travel\src\main\webapp" />
-      <recent name="D:\新建文件夹\travel\src\main\webapp\pages" />
+      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\imgs" />
+      <recent name="D:\新建文件夹\travel\src\main\resources" />
+      <recent name="D:\新建文件夹\travel\src\main\resources\com\mapper" />
+      <recent name="D:\新建文件夹\travel\src\main\webapp\statics\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\新建文件夹\travel\src\main\webapp" />
       <recent name="D:\新建文件夹\travel\src\main\webapp\statics" />
     </key>
   </component>
@@ -292,7 +275,8 @@
       <workItem from="1688869789761" duration="4541000" />
       <workItem from="1688883135926" duration="5803000" />
       <workItem from="1688890967236" duration="3080000" />
-      <workItem from="1688899387896" duration="3856000" />
+      <workItem from="1688899387896" duration="6544000" />
+      <workItem from="1688948360731" duration="10531000" />
     </task>
     <task id="LOCAL-00001" summary="cccc">
       <created>1688797230086</created>
@@ -322,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688806758372</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="445">
+      <created>1688907548041</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688907548041</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,6 +336,7 @@
     <MESSAGE value="ccccasdasasd" />
     <MESSAGE value="ccccasdas" />
     <MESSAGE value="44" />
-    <option name="LAST_COMMIT_MESSAGE" value="44" />
+    <MESSAGE value="445" />
+    <option name="LAST_COMMIT_MESSAGE" value="445" />
   </component>
 </project>
