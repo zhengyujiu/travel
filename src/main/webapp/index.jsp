@@ -16,6 +16,7 @@
         $(function(){
             if (!${empty msg}){
                 alert("${msg}");
+                <% request.setAttribute("msg",null);%>
             }
         })
 
@@ -28,5 +29,7 @@
 %>
 <c:out value="age"></c:out>
 <input type="password">
+
+<a href="/oneUserOrderList">订单页面</a>
 </body>
 </html>

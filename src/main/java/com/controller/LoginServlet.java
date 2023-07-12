@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("msg","用户名或密码不能为空");
             req.getRequestDispatcher("login.jsp").forward(req,resp);
         }
+
         User user = userService.queryUserByUname(uname);
         if (user==null){
             req.setAttribute("msg","用户名不存在");

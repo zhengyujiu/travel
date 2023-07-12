@@ -3,8 +3,99 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.UserMapper">
+    <resultMap id="userMap1" type="com.entity.User">
+        <id property="uid" column="uid"></id>
+        <result property="uname" column="uname"></result>
+        <result property="upassword" column="upassword"></result>
+        <result property="usex" column="usex"></result>
+        <result property="uage" column="uage"></result>
+        <result property="utype" column="utype"></result>
+        <result property="uphone" column="uphone"></result>
+        <result property="uemail" column="uemail"></result>
+        <result property="ufunds" column="ufunds"></result>
+        <collection property="userOrders" ofType="order">
+            <id property="oid" column="oid"></id>
+            <result property="aid" column="aid"></result>
+            <result property="rid" column="rid"></result>
+            <result property="rcid" column="rcid"></result>
+            <result property="uid" column="uid"></result>
+            <result property="hid" column="hid"></result>
+            <result property="ostartTime" column="ostart_time"></result>
+            <result property="oendTime" column="oend_time"></result>
+            <result property="ototalPrice" column="ototal_price"></result>
+            <association property="hotel" javaType="com.entity.Hotel" autoMapping="true" >
 
-    <select id="queryUserByUname" resultType="com.entity.User">
-        select * from user where uname=#{uname};
+            </association>
+            <association property="attraction">
+                <id property="aid" column="aid"></id>
+                <result property="aname" column="aname"></result>
+                <result property="aaddress" column="aaddress"></result>
+                <result property="adescription" column="adescription"></result>
+                <result property="atype" column="atype"></result>
+                <result property="ascore" column="ascore"></result>
+                <result property="aprice" column="aprice"></result>
+                <result property="acity" column="acity"></result>
+                <result property="apicture" column="apicture"></result>
+            </association>
+            <association property="room">
+                <id property="rid" column="rid"></id>
+                <result property="hid" column="hid"></result>
+                <result property="rprice" column="haddress"></result>
+                <result property="rtype" column="rtype"></result>
+                <result property="rstate" column="rstate"></result>
+            </association>
+            <association property="canteen">
+                <id property="rcid" column="rcid"></id>
+                <result property="rcname" column="rcname"></result>
+                <result property="rcaddress" column="rcaddress"></result>
+                <result property="rcintroduce" column="rcintroduce"></result>
+                <result property="rcphone" column="rcphone"></result>
+                <result property="rctime" column="rctime"></result>
+                <result property="rcprice" column="rcprice"></result>
+                <result property="rccity" column="rccity"></result>
+                <result property="rcpicture" column="rcpicture"></result>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="queryUserByUname" resultMap="userMap1">
+
+        SELECT
+            u.*,
+            o.oid, o.aid, o.rid, o.rcid, o.hid, o.ostart_time, o.oend_time, o.ototal_price,
+            o.aname,o.aaddress,o.adescription,o.atype,o.ascore,o.aprice,o.acity,o.apicture,
+            o.hname, o.haddress1, o.hemail, o.hphone, o.hcity, o.hpicture,
+            o.rprice, o.rtype, o.rstate,
+            o.rcname, o.rcaddress, o.rcintroduce, o.rcphone, o.rctime, o.rcprice, o.rccity, o.rcpicture
+        FROM
+            `user` as  u
+                LEFT JOIN (
+                SELECT
+                    `order`.oid, `order`.aid, `order`.rid, `order`.rcid, `order`.uid, `order`.hid, `order`.ostart_time, `order`.oend_time, `order`.ototal_price,
+                    attraction.aname,attraction.aaddress,attraction.adescription,attraction.atype,attraction.ascore,attraction.aprice,attraction.acity,attraction.apicture,
+                    hotel.hname, hotel.haddress1, hotel.hemail, hotel.hphone, hotel.hcity, hotel.hpicture,
+                    room.rprice, room.rtype, room.rstate,
+                    canteen.rcname, canteen.rcaddress, canteen.rcintroduce, canteen.rcphone, canteen.rctime, canteen.rcprice, canteen.rccity, canteen.rcpicture
+                FROM
+                    `order`
+                        LEFT JOIN hotel ON `order`.hid = hotel.hid
+                        LEFT JOIN attraction ON `order`.aid = attraction.aid
+                        LEFT JOIN room ON `order`.rid = room.rid
+                        LEFT JOIN canteen ON `order`.rcid = canteen.rcid
+            ) AS o ON u.uid = o.uid
+        WHERE
+            uname = #{uname};
     </select>
+
+    <select id="queryUserByUphone" resultType="com.entity.User">
+        select * from user where uphone=#{uphone};
+    </select>
+    <select id="queryUserByUemail" resultType="com.entity.User">
+        select * from user where uemail=#{uemail};
+    </select>
+
+    <insert id="insertUser" parameterType="com.entity.User">
+        insert into `user` values (null,#{uname},#{upassword},#{usex},#{uage},#{utype},#{uphone},#{uemail},#{ufunds});
+    </insert>
+
 </mapper>

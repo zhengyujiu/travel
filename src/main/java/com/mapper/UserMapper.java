@@ -6,4 +6,8 @@ import org.apache.ibatis.annotations.Select;
 
 public interface UserMapper {
     public User queryUserByUname(@Param("uname") String uname);
+    public User queryUserByUphone(@Param("uphone") String uphone);
+
+    public  User queryUserByUemail(@Param("uemail") String uemail) ;
+    public int insertUser(User user);
 }

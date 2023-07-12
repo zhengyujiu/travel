@@ -4,21 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
 public class Attraction {
 
   private Integer aid;
   private String aname;
   private String aaddress;
   private String adescription;
-  private Integer acommentNum;
+  private String atype;
   private double ascore;
   private double aprice;
   private String acity;
   private String apicture;
 
+  public Attraction() {
+  }
 
   public Integer getAid() {
     return aid;
@@ -56,12 +56,12 @@ public class Attraction {
   }
 
 
-  public Integer getAcommentNum() {
-    return acommentNum;
+  public String getAtype() {
+    return atype;
   }
 
-  public void setAcommentNum(Integer acommentNum) {
-    this.acommentNum = acommentNum;
+  public void setAcommentNum(String atype) {
+    this.atype = atype;
   }
 
 

@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -24,7 +23,7 @@
             }
         }
 
-        body>div.preloader {
+        body > div.preloader {
             position: fixed;
             background: white;
             width: 100%;
@@ -39,7 +38,7 @@
             justify-content: center;
         }
 
-        body:not(.loaded)>div.preloader {
+        body:not(.loaded) > div.preloader {
             opacity: 1;
         }
 
@@ -47,7 +46,7 @@
             overflow: hidden;
         }
 
-        body.loaded>div.preloader {
+        body.loaded > div.preloader {
             animation: hidePreloader .5s linear .5s forwards;
         }
     </style>
@@ -59,18 +58,23 @@
     <script src="/statics/js/quick-website.js"></script>
 
     <script>
-        window.addEventListener("load", function() {
-            setTimeout(function() {
+        window.addEventListener("load", function () {
+            setTimeout(function () {
                 document.querySelector('body').classList.add('loaded');
             }, 300);
         });
 
-            $(function(){
-            if(!${empty msg}){
-            $('#loginMsg').attr("visibility","visible");
-        }else {
-                $('#loginMsg').attr("visibility","hidden");
-        }
+        $(function () {
+            if (!${empty msg}) {
+                $('#loginMsg').attr("visibility", "visible");
+            } else {
+                $('#loginMsg').attr("visibility", "hidden");
+            }
+        })
+        $(function () {
+            if (!${empty registerMsg}) {
+                alert(${registerMsg});
+            }
         })
 
     </script>
@@ -94,11 +98,12 @@
                         <form action="/loginServlet" method="post">
                             <div class="form-group">
                                 <label class="form-control-label" for="uname">用户名</label>
-                                <div class="input-group" >
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="请输入用户名" required>
+                                    <input type="text" class="form-control" id="uname" name="uname"
+                                           placeholder="请输入用户名" required>
                                 </div>
                             </div>
                             <div class="form-group mb-0">
@@ -112,12 +117,14 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i data-feather="key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" id="upassword" name="upassword" required placeholder="请输入密码">
+                                    <input type="password" class="form-control" id="upassword" name="upassword" required
+                                           placeholder="请输入密码">
                                 </div>
-                              <small style="color: red;" id="loginMsg">${msg}</small>
+                                <small style="color: red;" id="loginMsg">${msg}</small>
                             </div>
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-block btn-primary" >登录</button></div>
+                                <button type="submit" class="btn btn-block btn-primary">登录</button>
+                            </div>
                         </form>
                     </div>
                     <div class="card-footer px-md-5"><small>未注册?</small>

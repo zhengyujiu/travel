@@ -1,3 +1,4 @@
+<%@ page import="com.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -6,8 +7,6 @@
 <html>
 <head>
     <%
-        String uname=request.getParameter("uname");
-        String uid=request.getParameter("uid");
         String aname=request.getParameter("aname");
         String aprice=request.getParameter("aprice");
         String hname=request.getParameter("hname");
@@ -20,18 +19,14 @@
         String rcid=request.getParameter("rcid");
         rprice="100";
         aprice="100";
-        uid="1";
         aid="1";
         rid="101";
         rcid="1";
-        uname="zhangsan";
+
 
         request.getSession().setAttribute("aid",aid);
         request.getSession().setAttribute("hid",hid);
         request.getSession().setAttribute("rcid",rcid);
-
-        request.setAttribute("uname",uname);
-        request.setAttribute("uid",uid);
         request.setAttribute("rid",rid);
         request.setAttribute("aname",aname);
         request.setAttribute("aprice",aprice);
@@ -122,12 +117,12 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="uid" class="form-label">用户ID</label>
-                            <input type="text" class="form-control" id="uid" name="uid" value="${uid}" readonly="readonly">
+                            <input type="text" class="form-control" id="uid" name="uid" value="${user.uid}" readonly="readonly">
                         </div>
 
                         <div class="col-sm-6">
                             <label for="uname" class="form-label">用户名</label>
-                            <input type="text" class="form-control" id="uname" name="uname" value="${uname}" >
+                            <input type="text" class="form-control" id="uname" name="uname" value="${user.uname}" >
                         </div>
 
                         <div class="col-6">
@@ -166,7 +161,7 @@
                             <label for="datetimepicker2" class="form-label">截止日期</label>
                             <input class="form-control" type="text"  id="datetimepicker2" name="oendTime" >
                         </div>
-                        <span id="dateErrorInfo" class="d-flex justify-content-center align-items-center"></span>
+                        <small style="color: red" id="dateErrorInfo" class="d-flex justify-content-center align-items-center"></small>
                         <div class="col-12">
                             <label for="ototalPrice" class="form-label">总费用</label>
                             <input type="text" class="form-control" name="ototalPrice" id="ototalPrice" readonly="readonly">
@@ -178,7 +173,6 @@
             </div>
         </div>
     </main>
-
     <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2017–2022 旅游信息平台</p>
     </footer>

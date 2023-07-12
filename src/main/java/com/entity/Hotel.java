@@ -1,22 +1,35 @@
 package com.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
+
+
+
 public class Hotel {
-
   private Integer hid;
   private String hname;
-  private String haddress;
+  private String haddress1;
   private String hemail;
   private String hphone;
   private String hcity;
   private String hpicture;
 
+  @Override
+  public String toString() {
+    return "Hotel{" +
+            "hid=" + hid +
+            ", hname='" + hname + '\'' +
+            ", haddress1='" + haddress1 + '\'' +
+            ", hemail='" + hemail + '\'' +
+            ", hphone='" + hphone + '\'' +
+            ", hcity='" + hcity + '\'' +
+            ", hpicture='" + hpicture + '\'' +
+            '}';
+  }
+
+  public Hotel(){
+    super();
+  }
 
   public Integer getHid() {
     return hid;
@@ -36,14 +49,13 @@ public class Hotel {
   }
 
 
-  public String getHaddress() {
-    return haddress;
+  public String getHaddress1() {
+    return haddress1;
   }
 
-  public void setHaddress(String haddress) {
-    this.haddress = haddress;
+  public void setHaddress1(String haddress1) {
+    this.haddress1 = haddress1;
   }
-
 
   public String getHemail() {
     return hemail;
@@ -79,5 +91,6 @@ public class Hotel {
   public void setHpicture(String hpicture) {
     this.hpicture = hpicture;
   }
+
 
 }

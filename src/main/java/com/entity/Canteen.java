@@ -4,21 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
 public class Canteen {
 
   private Integer rcid;
   private String rcname;
   private String rcaddress;
-  private String rcIntegerroduce;
+  private String rcintroduce;
   private String rcphone;
   private String rctime;
   private double rcprice;
   private String rccity;
   private String rcpicture;
 
+  public Canteen() {
+  }
 
   public Integer getRcid() {
     return rcid;
@@ -47,12 +47,12 @@ public class Canteen {
   }
 
 
-  public String getRcIntegerroduce() {
-    return rcIntegerroduce;
+  public String getrcintroduce() {
+    return rcintroduce;
   }
 
-  public void setRcIntegerroduce(String rcIntegerroduce) {
-    this.rcIntegerroduce = rcIntegerroduce;
+  public void setrcintroduce(String rcintroduce) {
+    this.rcintroduce = rcintroduce;
   }
 
 

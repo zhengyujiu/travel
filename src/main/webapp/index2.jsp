@@ -16,6 +16,7 @@
         $(function(){
             if (!${empty msg}){
                 alert("${msg}");
+                ${msg}=null;
             }
         })
 
@@ -23,10 +24,6 @@
 </head>
 <body>
 <h2>这是管理员管理的后台首页</h2>
-<%
-    String age="10";
-%>
-<c:out value="age"></c:out>
-<input type="password">
+
 </body>
 </html>

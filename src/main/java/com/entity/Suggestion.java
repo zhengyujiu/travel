@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+
 public class Suggestion {
 
   private Integer sgid;
@@ -60,4 +60,14 @@ public class Suggestion {
     this.sgprice = sgprice;
   }
 
+  @Override
+  public String toString() {
+    return "Suggestion{" +
+            "sgid=" + sgid +
+            ", rcid=" + rcid +
+            ", hid=" + hid +
+            ", aid=" + aid +
+            ", sgprice=" + sgprice +
+            '}';
+  }
 }

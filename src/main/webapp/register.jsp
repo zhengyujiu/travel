@@ -73,16 +73,16 @@
     </div>
     <div class="col-md-6 p-0 bg-white h-md-100 loginarea">
         <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
-            <form class="border rounded p-5" id="formSubmit">
+            <form class="border rounded p-5" id="formSubmit" action="/registerServlet">
                 <h3 class="mb-4 text-center">注册</h3>
                 <label class="form-control-label" for="uname">用户名</label>
                 <div class="form-group">
-                    <input type="用户名" class="form-control" id="uname" required placeholder="请输入用户名">
+                    <input type="用户名" class="form-control" id="uname" name="uname" required placeholder="请输入用户名">
                 </div>
 
                     <label class="form-control-label" for="upassword">密码</label>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="upassword" required>
+                        <input type="password" class="form-control" id="upassword" name="upassword" required>
                     </div>
                     <label class="form-control-label" for="checkPassword">确认密码</label>
                 <small class="d-block mt-0 text-center" id="passwordConfirm" style="color: red;"></small>
@@ -98,7 +98,7 @@
                     <input type="email" class="form-control" name="uemail" id="uemail" required>
                 </div>
                 <button type="submit" class="btn btn-success btn-round btn-block shadow-sm">注册</button>
-                <small class="d-block mt-0 text-center" id="checkMsg" style="visibility: visible">${msg}</small>
+                <small class="d-block mt-0 text-center" id="checkMsg" style="visibility: visible;color: red">${registerMsg}</small>
                 <small class="d-block mt-1 text-center">已有账号?<a  href="login.jsp">去登录</a></small>
             </form>
         </div>

@@ -1,6 +1,7 @@
 package com.controller.order;
 
 import com.entity.Order;
+import com.github.pagehelper.PageHelper;
 import com.service.OrderService;
 import com.service.impl.OrderServiceImpl;
 import jdk.internal.dynalink.support.BottomGuardingDynamicLinker;
@@ -39,5 +40,6 @@ public class InsertOrderServlet extends HttpServlet {
         String msg=orderService.insertOrder(order);
         req.setAttribute("msg",msg);
         req.getRequestDispatcher("index.jsp").forward(req,resp);
+        PageHelper.startPage(1,2);
     }
 }

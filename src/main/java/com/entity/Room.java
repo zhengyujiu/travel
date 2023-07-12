@@ -4,10 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
 public class Room {
+  @Override
+  public String toString() {
+    return "Room{" +
+            "rid=" + rid +
+            ", hid=" + hid +
+            ", rprice=" + rprice +
+            ", rtype='" + rtype + '\'' +
+            ", rstate=" + rstate +
+            '}';
+  }
 
   private Integer rid;
   private Integer hid;
@@ -15,6 +23,8 @@ public class Room {
   private String rtype;
   private Integer rstate;
 
+  public Room() {
+  }
 
   public Integer getRid() {
     return rid;
