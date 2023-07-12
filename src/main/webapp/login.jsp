@@ -76,7 +76,6 @@
                 alert(${registerMsg});
             }
         })
-
     </script>
     <link rel="stylesheet" href="statics/css/all.min.css">
     <link rel="stylesheet" href="statics/css/quick-website.css" id="stylesheet">

@@ -23,7 +23,6 @@
         rid="101";
         rcid="1";
 
-
         request.getSession().setAttribute("aid",aid);
         request.getSession().setAttribute("hid",hid);
         request.getSession().setAttribute("rcid",rcid);
@@ -53,6 +52,12 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
+        }
+        body{
+            background-image: url("statics/imgs/orderFormBg.jpg");
+            width: 100%;
+            height: 100%;
+            position: absolute;
         }
     </style>
     <script>
@@ -168,6 +173,7 @@
                         </div>
                         <div class="my-4"></div>
                         <button class="w-100 btn btn-primary btn-lg" type="submit" id="confirmButton" disabled>确认支付</button>
+                        <a href="index.jsp " ><button class="w-100 btn btn-danger btn-lg" type="button" id="cancelButton" >取消支付</button></a>
                     </div>
                 </form>
             </div>
