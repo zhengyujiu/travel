@@ -41,6 +41,16 @@ public class Order {
   private Canteen canteen;
   private Room room;
 
+  private User user;
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
   public Order() {
   }
 

@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.OrderMapper">
-    <resultMap id="orderMap" type="order">
+    <resultMap id="orderMap1" type="order">
         <id property="oid" column="oid"></id>
         <result property="aid" column="aid"></result>
         <result property="rid" column="rid"></result>
@@ -14,10 +14,38 @@
         <result property="ostartTime" column="ostart_time"></result>
         <result property="oendTime" column="oend_time"></result>
         <result property="ototalPrice" column="ototal_price"></result>
+        <association property="user" autoMapping="true"></association>
+        <association property="hotel" autoMapping="true"></association>
+        <association property="attraction" autoMapping="true"></association>
+        <association property="canteen" autoMapping="true"></association>
+        <association property="room" autoMapping="true"></association>
     </resultMap>
 
     <!--添加订单-->
     <insert id="insertOrder" parameterType="order">
         insert into `order` values (null,#{aid},#{rid},#{rcid},#{uid},#{hid},#{ostartTime},#{oendTime},#{ototalPrice});
     </insert>
+<!--    根据oid删除订单-->
+    <delete id="deleteOrderByOid">
+        delete
+        from `order`
+        where `order`.oid =#{oid};
+    </delete>
+    <select id="queryAllOrders" resultMap="orderMap1"  resultType="order">
+        select  o.oid,o.ostart_time,o.oend_time,o.ototal_price,o.uid,u.uname,u.uphone,h.hname,r.rid,r.rtype,c.rcname
+        from `order` as o LEFT JOIN `user` as u ON o.uid=u.uid
+                          left join attraction as a on o.aid=a.aid
+                          left join hotel as h on o.hid=h.hid
+                          left join room as r  on o.rid=r.rid
+                          left JOIN canteen as c on c.rcid=o.rcid;
+    </select>
+    <select id="queryOrderByUname" resultMap="orderMap1">
+        select  o.oid,o.ostart_time,o.oend_time,o.ototal_price,o.uid,u.uname,u.uphone,h.hname,r.rid,r.rtype,c.rcname
+        from `order` as o LEFT JOIN `user` as u ON o.uid=u.uid
+                          left join attraction as a on o.aid=a.aid
+                          left join hotel as h on o.hid=h.hid
+                          left join room as r  on o.rid=r.rid
+                          left JOIN canteen as c on c.rcid=o.rcid
+                        where u.uname=#{uname};
+    </select>
 </mapper>

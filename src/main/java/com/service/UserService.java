@@ -11,4 +11,6 @@ public interface UserService {
     public User queryUserByUemail(String uemail);
 
     public int insertUser(User user);
+
+
 }

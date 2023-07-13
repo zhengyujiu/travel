@@ -38,7 +38,7 @@
                         <form action="/searchOrderByAname">
                             <div class="input-group">
                                 <input type="text"  class="form-control"  name="searchName"
-                                       placeholder="输入景点名进行搜索" required>
+                                       placeholder="输入用户名进行搜索" required>
                                 <div class="input-group-append">
                                     <button class="input-group-text" id="searchBtn" type="submit"><i data-feather="search"></i></button>
                                 </div>
@@ -64,7 +64,7 @@
                             </tr>
                             <c:forEach items="${pageBean.list}" var="order" >
                                 <tr>
-                                    <td>${order.oid}</td>
+                                    <td>${order.oid }</td>
                                     <td>${order.attraction.aname}</td>
                                     <td><c:if test="${not empty order.hotel.hname}">${order.hotel.hname}</c:if><c:if test="${empty order.hotel.hname}">未预定酒店</c:if></td>
                                     <td><c:if test="${not empty order.hotel.haddress1}">${order.hotel.haddress1}</c:if><c:if test="${empty order.hotel.haddress1}">未预定酒店</c:if></td>

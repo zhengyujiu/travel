@@ -13,7 +13,7 @@ public class Suggestion {
   private Integer rcid;
   private Integer hid;
   private Integer aid;
-  private double sgprice;
+
 
 
   public Integer getSgid() {
@@ -52,13 +52,6 @@ public class Suggestion {
   }
 
 
-  public double getSgprice() {
-    return sgprice;
-  }
-
-  public void setSgprice(double sgprice) {
-    this.sgprice = sgprice;
-  }
 
   @Override
   public String toString() {
@@ -67,7 +60,7 @@ public class Suggestion {
             ", rcid=" + rcid +
             ", hid=" + hid +
             ", aid=" + aid +
-            ", sgprice=" + sgprice +
+
             '}';
   }
 }

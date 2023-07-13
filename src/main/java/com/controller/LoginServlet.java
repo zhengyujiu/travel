@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println(3);
         }else if (user.getUtype()==0){
             req.getSession().setAttribute("user",user);
-            resp.sendRedirect("index2.jsp");
+            resp.sendRedirect("back.jsp");
             System.out.println(4);
         }
     }

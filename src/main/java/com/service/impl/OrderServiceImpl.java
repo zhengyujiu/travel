@@ -15,6 +15,15 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Override
+    public List<Order> queryAllOrders() {
+        SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
+        SqlSession session = sqlSessionFactoryUtil.getsqlSession();
+        OrderMapper mapper = session.getMapper(OrderMapper.class);
+        List<Order> orderList = mapper.queryAllOrders();
+        return orderList;
+    }
+
+    @Override
     public String insertOrder(Order order) {
         SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
         SqlSession session = sqlSessionFactoryUtil.getsqlSession();
@@ -77,5 +86,57 @@ public class OrderServiceImpl implements OrderService {
         pageBean.setList(orders);
         pageBean.setTotalCount(orderList.size());
         return pageBean;
+    }
+
+    @Override
+    public PageBean getOrderByUnameAndPage(PageBean pageBean, List<Order> userOrders, String uname) {
+        if (userOrders==null){
+            System.out.println("userOrders为空");
+        }
+        if ((Integer)pageBean.getPageSize()==null||pageBean.getPageSize()==0){
+            System.out.println("pageBean.getPageSize()==null");
+            pageBean.setPageSize(5);
+        }
+        if ((Integer)pageBean.getCurrentPage()==null||pageBean.getCurrentPage()==0){
+            pageBean.setCurrentPage(1);
+        }
+        List<Order> orderList=new ArrayList<>();
+        for (Order order:userOrders){
+
+            if (order.getUser().getUname().equals(uname)){
+                orderList.add(order);
+            }
+        }
+        System.out.println("orderList的size是(totalCount)"+orderList.size());
+        int start=0;
+        if ((pageBean.getCurrentPage()-1)*pageBean.getPageSize()<=orderList.size()){
+            start=(pageBean.getCurrentPage()-1)*pageBean.getPageSize();
+        }else {
+            pageBean.setCurrentPage(orderList.size()/ pageBean.getPageSize()+1);
+            start=orderList.size()-orderList.size()% pageBean.getPageSize();
+        }
+        int end=(start + pageBean.getPageSize()) <=orderList.size()?start + pageBean.getPageSize():orderList.size();
+        List<Order> orders = orderList.subList(start, end);
+        pageBean.setList(orders);
+        pageBean.setTotalCount(orderList.size());
+        return pageBean;
+    }
+
+    @Override
+    public List<Order> queryOrderByUname(String uname) {
+        SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
+        SqlSession session = sqlSessionFactoryUtil.getsqlSession();
+        OrderMapper mapper = session.getMapper(OrderMapper.class);
+        List<Order> orderList = mapper.queryOrderByUname(uname);
+        return orderList;
+    }
+
+    @Override
+    public int deleteOrderByOid(int oid) {
+        SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
+        SqlSession session = sqlSessionFactoryUtil.getsqlSession();
+        OrderMapper mapper = session.getMapper(OrderMapper.class);
+        int i=mapper.deleteOrderByOid(oid);
+        return i;
     }
 }

@@ -3,10 +3,8 @@ package com.controller.order;
 import com.entity.Order;
 import com.entity.PageBean;
 import com.entity.User;
-import com.github.pagehelper.Page;
 import com.service.OrderService;
 import com.service.impl.OrderServiceImpl;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,20 +14,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/searchOrderByAname")
-public class SearchOrderByAname extends HttpServlet {
+@WebServlet("/searchOrderByUname")
+public class SearchOrderByUname extends HttpServlet {
     //这个类负责在用户点击搜索框后,跳转到这
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        String aname=req.getParameter("searchName");
-        System.out.println("searchOrderByAname searchName:"+aname);
-        User user= (User) req.getSession().getAttribute("user");
-        List<Order> userOrders = user.getUserOrders();
+        String uname=req.getParameter("searchName");
         OrderService orderService=new OrderServiceImpl();
+        List<Order> orderList = orderService.queryOrderByUname(uname);
+//        System.out.println("***"+orderList.toString());
         PageBean pageBean=new PageBean();
-        pageBean=orderService.getOrderByAnameAndPage(pageBean,userOrders,aname);
+        pageBean=orderService.getOrderByUnameAndPage(pageBean,orderList,uname);
         req.setAttribute("pageBean",pageBean);
-        req.setAttribute("searchName",aname);
-        req.getRequestDispatcher("order.jsp").forward(req,resp);
+        req.setAttribute("searchName",uname);
+        req.getRequestDispatcher("beOrder.jsp").forward(req,resp);
     }
 }

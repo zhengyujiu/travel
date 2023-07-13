@@ -59,7 +59,6 @@
     </resultMap>
 
     <select id="queryUserByUname" resultMap="userMap1">
-
         SELECT
             u.*,
             o.oid, o.aid, o.rid, o.rcid, o.hid, o.ostart_time, o.oend_time, o.ototal_price,
@@ -86,7 +85,6 @@
         WHERE
             uname = #{uname};
     </select>
-
     <select id="queryUserByUphone" resultType="com.entity.User">
         select * from user where uphone=#{uphone};
     </select>
