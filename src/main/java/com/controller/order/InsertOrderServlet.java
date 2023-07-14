@@ -1,9 +1,14 @@
 package com.controller.order;
 
 import com.entity.Order;
+import com.entity.User;
 import com.github.pagehelper.PageHelper;
 import com.service.OrderService;
+import com.service.RoomService;
+import com.service.UserService;
 import com.service.impl.OrderServiceImpl;
+import com.service.impl.RoomServiceImpl;
+import com.service.impl.UserServiceImpl;
 import jdk.internal.dynalink.support.BottomGuardingDynamicLinker;
 
 import javax.servlet.ServletException;
@@ -31,15 +36,27 @@ public class InsertOrderServlet extends HttpServlet {
             rcid= Integer.parseInt((String) req.getSession().getAttribute("rcid"));
         }
         int rid= Integer.parseInt(req.getParameter("rid")) ;
+
         int uid= Integer.parseInt(req.getParameter("uid")) ;
         String ostartTime= req.getParameter("ostartTime");
         String oendTime=  req.getParameter("oendTime");
-        double ototalPrice= Double.parseDouble(req.getParameter("ototalPrice")) ;
+        float ototalPrice= Float.parseFloat(req.getParameter("ototalPrice")) ;
         Order order=new Order(null,aid,rid,rcid,uid,hid,ostartTime,oendTime, ototalPrice);
-        System.out.println(order.toString());
-        String msg=orderService.insertOrder(order);
-        req.setAttribute("msg",msg);
-        req.getRequestDispatcher("index.jsp").forward(req,resp);
-        PageHelper.startPage(1,2);
+        User user = (User) req.getSession().getAttribute("user");
+        if (user.getUfunds()>=ototalPrice){
+            String msg=orderService.insertOrder(order);
+            RoomService roomService=new RoomServiceImpl();
+            roomService.setRoomState(rid);
+            UserService userService=new UserServiceImpl();
+            System.out.println("uid是"+uid);
+            userService.updateUfundsByUid(ototalPrice,uid);
+            req.setAttribute("msg",msg);
+            req.getRequestDispatcher("index.jsp").forward(req,resp);
+        }else {
+
+            req.setAttribute("msg","用户余额不足");
+            req.getRequestDispatcher("index.jsp").forward(req,resp);
+        }
+
     }
 }

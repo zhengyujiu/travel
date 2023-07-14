@@ -22,7 +22,6 @@ public class SearchOrderByUname extends HttpServlet {
         String uname=req.getParameter("searchName");
         OrderService orderService=new OrderServiceImpl();
         List<Order> orderList = orderService.queryOrderByUname(uname);
-//        System.out.println("***"+orderList.toString());
         PageBean pageBean=new PageBean();
         pageBean=orderService.getOrderByUnameAndPage(pageBean,orderList,uname);
         req.setAttribute("pageBean",pageBean);

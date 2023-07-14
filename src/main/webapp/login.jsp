@@ -70,12 +70,16 @@
             } else {
                 $('#loginMsg').attr("visibility", "hidden");
             }
-        })
-        $(function () {
+
             if (!${empty registerMsg}) {
-                alert(${registerMsg});
+                alert("${registerMsg}");
+            }
+
+            if (!${empty filterMsg}&&${empty registerMsg}) {
+                alert("${filterMsg}");
             }
         })
+
     </script>
     <link rel="stylesheet" href="statics/css/all.min.css">
     <link rel="stylesheet" href="statics/css/quick-website.css" id="stylesheet">
@@ -127,7 +131,7 @@
                         </form>
                     </div>
                     <div class="card-footer px-md-5"><small>未注册?</small>
-                        <a href="#" class="small font-weight-bold">创建账户</a></div>
+                        <a href="register.jsp" class="small font-weight-bold">创建账户</a></div>
                 </div>
             </div>
         </div>

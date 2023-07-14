@@ -25,7 +25,12 @@
     <insert id="insertOrder" parameterType="order">
         insert into `order` values (null,#{aid},#{rid},#{rcid},#{uid},#{hid},#{ostartTime},#{oendTime},#{ototalPrice});
     </insert>
-<!--    根据oid删除订单-->
+<!--    更新订单-->
+    <update id="updateOrderByOid">
+        update  `order` set aid=#{aid},rid=#{rid},rcid=#{rcid},uid=#{uid},hid=#{hid},ostart_time=#{ostartTime},oend_time=#{oendTime},ototal_price=#{ototalPrice}
+        where oid=#{oid};
+    </update>
+    <!--    根据oid删除订单-->
     <delete id="deleteOrderByOid">
         delete
         from `order`
@@ -47,5 +52,8 @@
                           left join room as r  on o.rid=r.rid
                           left JOIN canteen as c on c.rcid=o.rcid
                         where u.uname=#{uname};
+    </select>
+    <select id="selectOrderByOid" resultType="com.entity.Order">
+        select * from   `order` where oid=#{oid};
     </select>
 </mapper>

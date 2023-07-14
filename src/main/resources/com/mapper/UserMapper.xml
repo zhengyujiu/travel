@@ -57,6 +57,9 @@
             </association>
         </collection>
     </resultMap>
+    <update id="updateUfundsByUid">
+        update  `user`  set  ufunds=ufunds-#{ototalPrice} where uid=#{uid};
+    </update>
 
     <select id="queryUserByUname" resultMap="userMap1">
         SELECT
@@ -90,6 +93,10 @@
     </select>
     <select id="queryUserByUemail" resultType="com.entity.User">
         select * from user where uemail=#{uemail};
+    </select>
+    <select id="selectUfundsByUid" resultType="java.lang.Float">
+        select ufunds
+        from `user` where uid=#{uid};
     </select>
 
     <insert id="insertUser" parameterType="com.entity.User">

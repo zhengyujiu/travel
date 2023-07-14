@@ -58,7 +58,6 @@ public class OneUserOrderList extends HttpServlet {
                     pageBean.setPageSize(5);
                 }
                 pageBean=orderService.getOrderByPage(userOrders,pageBean);
-                System.out.println(pageBean.getList().size());
                 req.setAttribute("pageBean",pageBean);
                 req.getRequestDispatcher("order.jsp").forward(req,resp);
             }

@@ -10,4 +10,8 @@ public interface UserMapper {
 
     public  User queryUserByUemail(@Param("uemail") String uemail) ;
     public int insertUser(User user);
+
+    void updateUfundsByUid(@Param("ototalPrice") float ototalPrice,@Param("uid")Integer uid);
+
+    float selectUfundsByUid(@Param("uid") Integer uid);
 }

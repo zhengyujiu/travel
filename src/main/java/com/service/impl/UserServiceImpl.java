@@ -43,4 +43,21 @@ public class UserServiceImpl implements UserService {
         int i = mapper.insertUser(user);
         return i;
     }
+
+    @Override
+    public void updateUfundsByUid(float ototalPrice,Integer uid) {
+        SqlSessionFactoryUtil sqlSessionFactoryUtil=new SqlSessionFactoryUtil();
+        SqlSession session = sqlSessionFactoryUtil.getsqlSession();
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        mapper.updateUfundsByUid(ototalPrice,uid);
+    }
+
+    @Override
+    public float selectUfundsByUid(Integer uid) {
+        SqlSessionFactoryUtil sqlSessionFactoryUtil=new SqlSessionFactoryUtil();
+        SqlSession session = sqlSessionFactoryUtil.getsqlSession();
+        UserMapper mapper = session.getMapper(UserMapper.class);
+        float v = mapper.selectUfundsByUid(uid);
+        return v;
+    }
 }

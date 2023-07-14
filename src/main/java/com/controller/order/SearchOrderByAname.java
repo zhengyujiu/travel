@@ -22,7 +22,6 @@ public class SearchOrderByAname extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         String aname=req.getParameter("searchName");
-        System.out.println("searchOrderByAname searchName:"+aname);
         User user= (User) req.getSession().getAttribute("user");
         List<Order> userOrders = user.getUserOrders();
         OrderService orderService=new OrderServiceImpl();

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.AttractionMapper">
+
+
+    <select id="selectAidByAname" resultType="java.lang.Integer">
+        select aid from attraction where aname=#{aname};
+    </select>
+    <select id="selectApriceByAname" resultType="java.lang.Double">
+        select aprice from attraction  where aname=#{aname};
+    </select>
+</mapper>

@@ -22,9 +22,9 @@ public class QueryOrdersByPage extends HttpServlet {
         PageBean<Order> pageBean=new PageBean<>();
         String searchName = req.getParameter("searchName");
         if (searchName==null||searchName.isEmpty()){
-            System.out.println("这个时候还没有searchName");
             List<Order> orderList = orderService.queryAllOrders();
             if (orderList==null||orderList.size()==0){
+                System.out.println(1);
                 pageBean.setTotalCount(0);
                 pageBean.setList(null);
                 pageBean.setCurrentPage(1);
@@ -33,6 +33,7 @@ public class QueryOrdersByPage extends HttpServlet {
                 req.getRequestDispatcher(  "beOrder.jsp").forward(req,resp);
             }
             else {
+                System.out.println(2);
                 String pageSize = req.getParameter("pageSize") ;
                 String currentPage =req.getParameter("currentPage") ;
                 if (currentPage!=null){
@@ -46,11 +47,11 @@ public class QueryOrdersByPage extends HttpServlet {
                     pageBean.setPageSize(5);
                 }
                 pageBean=orderService.getOrderByPage(orderList,pageBean);
-                System.out.println(pageBean.getList().size());
                 req.setAttribute("pageBean",pageBean);
                 req.getRequestDispatcher("beOrder.jsp").forward(req,resp);
             }
         }else {
+            System.out.println(3);
             //现在是有searchName的,也就是说现在正在处于对特定景点订单的查询
             System.out.println("这个时候有了searchName");
             String pageSize = req.getParameter("pageSize") ;
@@ -75,26 +76,4 @@ public class QueryOrdersByPage extends HttpServlet {
             req.getRequestDispatcher("beOrder.jsp").forward(req,resp);
         }
     }
-//        ********************************************
-//        //这个类是用户点击了前一页后一页跳转,才到这个页面
-//        OrderService orderService=new OrderServiceImpl();
-//        List<Order> orderList =orderService.queryAllOrders();
-//        PageBean pageBean=new PageBean();
-//        String pageSize = req.getParameter("pageSize");
-//        String currentPage =req.getParameter("currentPage");
-//        if (currentPage!=null){
-//            pageBean.setCurrentPage(Integer.parseInt(currentPage));
-//        }else {
-//            pageBean.setCurrentPage(1);
-//        }
-//        if (pageSize!=null){
-//            pageBean.setPageSize(Integer.parseInt(pageSize));
-//        }else {
-//            pageBean.setPageSize(5);
-//        }
-//        pageBean=orderService.getOrderByPage(orderList,pageBean);
-////        System.out.println(pageBean.getList().size());
-//        req.setAttribute("pageBean",pageBean);
-//        req.getRequestDispatcher("beOrder.jsp").forward(req,resp);
-//    }
 }

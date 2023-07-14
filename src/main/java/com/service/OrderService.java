@@ -2,6 +2,7 @@ package com.service;
 
 import com.entity.Order;
 import com.entity.PageBean;
+import org.ietf.jgss.Oid;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface OrderService {
 
     int deleteOrderByOid(int oid);
 
+    int updateOrderByOid(Integer oid,Integer aid,Integer rid,Integer rcid,Integer uid,Integer hid,String ostartTime,String oendTime,float ototalPrice );
+
+    Order selectOrderByOid(int oid);
 }
