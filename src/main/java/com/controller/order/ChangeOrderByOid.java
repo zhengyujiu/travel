@@ -3,7 +3,6 @@ package com.controller.order;
 import com.entity.Room;
 import com.service.*;
 import com.service.impl.*;
-import com.sun.xml.internal.ws.handler.HandlerException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,9 +42,10 @@ public class ChangeOrderByOid extends HttpServlet {
 
         float ototalPrice= Float.parseFloat(req.getParameter("ototalPrice"));
         System.out.println("oldOtotalPrice:"+req.getParameter("oldOtotalPrice"));
-
+        //获取用户之前订单所花费的金额
         float oldOtotalPrice= Float.parseFloat(req.getParameter("oldOtotalPrice"));
         String changeMsg=null;
+        //判断管理员填写的景点是否存在,不存在就返回前端,并传回错误消息
         aid=attractionService.selectAidByAname(aname);
         if(aid==null){
             System.out.println("aid==null");
@@ -54,6 +54,7 @@ public class ChangeOrderByOid extends HttpServlet {
             req.getRequestDispatcher("/queryOrderByPage").forward(req,resp);
             return;
         }
+//        判断管理员填写的酒店是否存在,不存在就返回前端,并传回错误消息
         if (hname==null||hname.isEmpty()){
             hid=null;
         }else {System.out.println(3);
@@ -65,7 +66,7 @@ public class ChangeOrderByOid extends HttpServlet {
                 return;
             }
         }
-
+//        判断管理员填写的餐厅是否存在,不存在就返回前端,并传回错误消息
         if (rcname==null||rcname.isEmpty()){
             System.out.println(4);
             rcid=null;
@@ -80,22 +81,28 @@ public class ChangeOrderByOid extends HttpServlet {
         }
 
         //检验前端传来的rid是否正确
+        //如果管理员没填写酒店,只填了房间号,就让管理员填写酒店信息
         if ((hname==null|| hname.isEmpty())&&rid!=null){
             System.out.println(5);
             changeMsg="请选择酒店";
             req.setAttribute("changeMsg",changeMsg);
             req.getRequestDispatcher("/queryOrderByPage").forward(req,resp);
             return;
-        }else if (!(hname==null|| hname.isEmpty()) && rid!=null ){
+        }
+        //如果酒店名不为空,房间号也不为空就判断这个房间号是不是属于该酒店的,这个房间号是否存在
+        else if (!(hname==null|| hname.isEmpty()) && rid!=null ){
             System.out.println(6);
             Room room = roomService.selectRoomByRid(rid);
+            //判断这个房间是否被其他人占用了
             if (room==null||room.getRstate()==0){
                 System.out.println(7);
                 changeMsg="该房间不可用";
                 req.setAttribute("changeMsg",changeMsg);
                 req.getRequestDispatcher("/queryOrderByPage").forward(req,resp);
                 return;
-            }else if (room!=null&&room.getRstate()==1){
+            }
+            //判断这个房间是否属于所选的酒店
+            else if (room!=null&&room.getRstate()==1){
                 if (room.getHid()!=hotelService.selectHidByHname(hname)){
                     changeMsg="该房间不存在";
                     req.setAttribute("changeMsg",changeMsg);
@@ -106,13 +113,16 @@ public class ChangeOrderByOid extends HttpServlet {
 
             }
         }
-
+//判断用户余额是否够
         if (userService.selectUfundsByUid(uid)+oldOtotalPrice>=ototalPrice){
             Integer i = orderService.updateOrderByOid(oid, aid, rid, rcid, uid, hid, ostartTime, oendTime, ototalPrice);
             if (i==1){
+//                如果够的话就下单
                 changeMsg="修改成功";
                 System.out.println("设置房间的状态为1");
+                //修改房间状态
                 roomService.setRoomState(rid);
+                //修改用户余额
                 userService.updateUfundsByUid(ototalPrice-oldOtotalPrice,uid);
                 req.setAttribute("changeMsg",changeMsg);
                 req.getRequestDispatcher("/queryOrderByPage").forward(req,resp);
@@ -125,6 +135,7 @@ public class ChangeOrderByOid extends HttpServlet {
                 return;
             }
         }else {
+            //用户余额不足
             changeMsg="用户余额不足";
             req.setAttribute("changeMsg",changeMsg);
             req.getRequestDispatcher("/queryOrderByPage").forward(req,resp);

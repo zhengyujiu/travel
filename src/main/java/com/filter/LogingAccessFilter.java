@@ -42,11 +42,14 @@ public class LogingAccessFilter implements Filter {
             return;
         }
 //        放行指定操作
-        if (url.contains("loginServlet")||url.contains("registerServlet")){
+        if (url.contains("loginServlet")||url.contains("registerServlet") ||url.contains("arriveServlet")
+                ||url.contains("orderHotelServlet")||url.contains("orderCanteenServlet")||url.contains("suggestServlet")
+                ||url.contains("produceOrderServlet")||url.contains("cancelChooseOrderServlet")){
             filterChain.doFilter(request,response);
             return;
         }
         else {
+            //判断是否用户登录
             if (request.getSession().getAttribute("user")!=null){
                 filterChain.doFilter(request,response);
                 return;

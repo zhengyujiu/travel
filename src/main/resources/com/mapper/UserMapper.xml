@@ -60,7 +60,7 @@
     <update id="updateUfundsByUid">
         update  `user`  set  ufunds=ufunds-#{ototalPrice} where uid=#{uid};
     </update>
-
+<!--通过uname查找用户-->
     <select id="queryUserByUname" resultMap="userMap1">
         SELECT
             u.*,

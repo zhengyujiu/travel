@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.front.canteenMapper">
+    <select id="getBeginSomeInfo" resultType="com.entity.Canteen">
+        select * from canteen limit 0,5
+    </select>
+
+    <select id="getSomeByQueryCity" resultType="com.entity.Canteen">
+        select * from canteen where rccity=#{QueryCity}
+    </select>
+
+    <!-- 在mybatis中只有大于号是合法的，<号的非法的，如果想要使用<，则必须使用转义字符&lt; -->
+    <select id="getCanteensWithAttraction" resultType="java.lang.Integer">
+        select rcid from arc_distance where aid=#{chooseAttraction} and #{ahDistance}>=distance
+    </select>
+
+    <!-- 使用in查询语句时，需要使用foreach标签，将集合中的元素遍历出来   -->
+    <select id="getCanteensByHids" resultType="com.entity.Canteen">
+        select * from canteen
+        where canteen.rcid in
+        <foreach collection="list" open="(" close=")" separator="," item="rcid">
+            #{rcid}
+        </foreach>
+    </select>
+
+    <select id="getOneCanteenByRcid" resultType="com.entity.Canteen">
+        select * from canteen where rcid=#{rcid}
+    </select>
+
+</mapper>

@@ -6,6 +6,7 @@ import com.utils.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
 
 public class CanteenServiceImpl implements CanteenService {
+//    根据餐厅名称查找餐厅id
     @Override
     public Integer selectRcidByRcname(String rcname) {
         SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();

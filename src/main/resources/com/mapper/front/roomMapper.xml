@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.front.roomMapper">
+
+<!-- 使用条件查询，找出一个酒店的所有房间并根据条件查询 -->
+<!-- 注意mybatis中的条件为传入的参数的名字 -->
+    <select id="getSomeInfoByRoomTypePrice" resultType="com.entity.Room">
+        select * from room
+                 <where>
+                     <if test="rtype!=null and rtype!=''">
+                         rtype=#{rtype} and
+                     </if>
+# 注意，如果不传入价格，其默认值为0，则需让价格不为0
+                     <if test="rprice!=null and rprice!=0">
+                         #{rprice}>=rprice and
+                     </if>
+                     <if test="hid!=null">
+                         hid=#{hid}
+                     </if>
+                 </where>
+    </select>
+
+<!-- 得到room表当中初始时的一些房间信息，默认从第一条记录开始，展示10条记录 -->
+    <select id="getBeginSomeInfoByHid" resultType="com.entity.Room">
+        select * from room where hid=#{hid} limit 0,10
+    </select>
+
+</mapper>

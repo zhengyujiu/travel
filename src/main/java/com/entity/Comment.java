@@ -1,54 +1,49 @@
 package com.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 public class Comment {
-
-  private Integer cid;
-  private Integer uid;
-  private Integer aid;
-  private Integer uscore;
+  private int cid;
+  private int uid;
+  private int aid;
+  private int uscore;
   private String cdate;
   private String ccontent;
 
+  //评论对景点是1对1的关系，一个评论中只能放一个景点信息，所以在评论中加入景点实体，用于存放该条评论中存放的景点信息
+  private Attraction comment_attraction;
 
-  public Integer getCid() {
+  public int getCid() {
     return cid;
   }
 
-  public void setCid(Integer cid) {
+  public void setCid(int cid) {
     this.cid = cid;
   }
 
 
-  public Integer getUid() {
+  public int getUid() {
     return uid;
   }
 
-  public void setUid(Integer uid) {
+  public void setUid(int uid) {
     this.uid = uid;
   }
 
 
-  public Integer getAid() {
+  public int getAid() {
     return aid;
   }
 
-  public void setAid(Integer aid) {
+  public void setAid(int aid) {
     this.aid = aid;
   }
 
 
-  public Integer getUscore() {
+  public int getUscore() {
     return uscore;
   }
 
-  public void setUscore(Integer uscore) {
+  public void setUscore(int uscore) {
     this.uscore = uscore;
   }
 
@@ -68,6 +63,26 @@ public class Comment {
 
   public void setCcontent(String ccontent) {
     this.ccontent = ccontent;
+  }
+
+  public Attraction getComment_attraction() {
+    return comment_attraction;
+  }
+
+  public void setComment_attraction(Attraction comment_attraction) {
+    this.comment_attraction = comment_attraction;
+  }
+  @Override
+  public String toString() {
+    return "Comment{" +
+            "cid=" + cid +
+            ", uid=" + uid +
+            ", aid=" + aid +
+            ", uscore=" + uscore +
+            ", cdate='" + cdate + '\'' +
+            ", ccontent='" + ccontent + '\'' +
+            ", attraction=" + comment_attraction +
+            '}';
   }
 
 }

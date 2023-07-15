@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.HotelMapper">
 
-
+<!--    通过酒店名称查找酒店id-->
     <select id="selectHidByHname" resultType="java.lang.Integer">
         select hid from hotel where hname=#{hname};
     </select>

@@ -55,6 +55,9 @@ public class Attraction {
     this.adescription = adescription;
   }
 
+  public void setAtype(String atype) {
+    this.atype = atype;
+  }
 
   public String getAtype() {
     return atype;

@@ -38,25 +38,25 @@
     <script>
         $(function (){
             $("#userManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","userManagerServlet");
             });
             $("#commentManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","/backjsp/userManager.jsp");
             });
             $("#suggestionManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","/backjsp/userManager.jsp");
             });
             $("#attractionManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","attractionManagerServlet");
             });
             $("#hotelManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","/backjsp/userManager.jsp");
             });
             $("#canteenManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","/backjsp/userManager.jsp");
             });
             $("#roomManage").bind("click",function (){
-                $("#myIframe").attr("src","index.jsp");
+                $("#myIframe").attr("src","/backjsp/userManager.jsp");
             });
             $("#orderManage").bind("click",function (){
                 $("#myIframe").attr("src","/queryOrderByPage");
@@ -151,7 +151,7 @@
   </aside>
     <div class="page-wrapper" >
         <div style="position: relative;left: 0px" id="myDiv">
-            <iframe src="login.jsp" id="myIframe" >
+            <iframe src="backjsp/userManager.jsp" id="myIframe" >
             </iframe>
         </div>
     </div>

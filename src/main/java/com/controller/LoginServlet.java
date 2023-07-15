@@ -41,7 +41,7 @@ public class  LoginServlet extends HttpServlet {
         //判断用户类型,转到响应的页面,并将用户的信息存到session中,方便以后存取信息
         else if (user.getUtype()==1){
             req.getSession().setAttribute("user",user);
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("homeServlet");
             System.out.println(3);
         }else if (user.getUtype()==0){
             req.getSession().setAttribute("user",user);

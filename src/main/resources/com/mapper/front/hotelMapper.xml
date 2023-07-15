@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.front.hotelMapper">
+
+    <select id="getBeginSomeInfo" resultType="com.entity.Hotel">
+        select * from hotel limit 0,5
+    </select>
+
+    <select id="getSomeByQueryCity" resultType="com.entity.Hotel">
+        select * from hotel where hcity=#{QueryCity}
+    </select>
+
+    <!-- 在mybatis中只有大于号是合法的，<号的非法的，如果想要使用<，则必须使用转义字符&lt; -->
+    <select id="getHotelsWithAttraction" resultType="java.lang.Integer">
+        select hid from ah_distance where aid=#{chooseAttraction} and #{ahDistance}>distance
+    </select>
+
+<!-- 使用in查询语句时，需要使用foreach标签，将集合中的元素遍历出来   -->
+    <select id="getHotelsByHids" resultType="com.entity.Hotel">
+        select * from hotel
+                 where hid in
+                 <foreach collection="list" open="(" close=")" separator="," item="hid">
+                     #{hid}
+                 </foreach>
+    </select>
+
+    <select id="getOneHotelByHid" resultType="com.entity.Hotel">
+        select * from hotel where hid=#{hid}
+    </select>
+
+</mapper>

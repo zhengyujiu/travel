@@ -25,6 +25,7 @@ public class OneUserOrderList extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         OrderService orderService=new OrderServiceImpl();
+        //判断session中是否有用户的登录信息,如果没有就叫用户先去登录
         if (req.getSession().getAttribute("user")==null){
             String msg="请先登录";
             req.setAttribute("msg",msg);
@@ -33,9 +34,12 @@ public class OneUserOrderList extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         List<Order> userOrders = user.getUserOrders();
         PageBean<Order> pageBean=new PageBean<>();
+//        获取searchName
         String searchName = req.getParameter("searchName");
+//        判断用户有没有填写searchNmae
         if (searchName==null||searchName.isEmpty()){
             System.out.println("这个时候还没有searchName");
+//            判断当前用户的订单是否有订单
             if (userOrders==null||userOrders.size()==0){
                 pageBean.setTotalCount(0);
                 pageBean.setList(null);
@@ -45,6 +49,7 @@ public class OneUserOrderList extends HttpServlet {
                 req.getRequestDispatcher("order.jsp").forward(req,resp);
             }
             else {
+//                这是用户有订单的情况
                 String pageSize = req.getParameter("pageSize") ;
                 String currentPage =req.getParameter("currentPage") ;
                 if (currentPage!=null){
@@ -76,6 +81,7 @@ public class OneUserOrderList extends HttpServlet {
             }else {
                 pageBean.setPageSize(5);
             }
+            //getOrderByAnameAndPage 方法用来设置pageBean的list和totalCount
             pageBean = orderService.getOrderByAnameAndPage(pageBean, userOrders, searchName);
             req.setAttribute("pageBean",pageBean);
             req.setAttribute("searchName",searchName);

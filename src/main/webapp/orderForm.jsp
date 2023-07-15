@@ -7,32 +7,24 @@
 <html>
 <head>
     <%
-        String aname=request.getParameter("aname");
-        String aprice=request.getParameter("aprice");
-        String hname=request.getParameter("hname");
-        String rid=request.getParameter("rid");
-        String rprice=request.getParameter("rprice");
-        String rcname=request.getParameter("rcname");
-        String rtype=request.getParameter("rtype");
-        String aid=request.getParameter("aid");
-        String hid=request.getParameter("hid");
-        String rcid=request.getParameter("rcid");
-        rprice="100";
-        aprice="100";
-        aid="1";
-        rid="101";
-        rcid="1";
-
-        request.getSession().setAttribute("aid",aid);
-        request.getSession().setAttribute("hid",hid);
-        request.getSession().setAttribute("rcid",rcid);
-        request.setAttribute("rid",rid);
-        request.setAttribute("aname",aname);
-        request.setAttribute("aprice",aprice);
-        request.setAttribute("hname",hname);
-        request.setAttribute("rprice",rprice);
-        request.setAttribute("rcname",rcname);
-        request.setAttribute("rtype",rtype);
+//        String aname= (String) request.getSession().getAttribute("aname");
+//        double aprice= (double) request.getSession().getAttribute("aprice");
+//        String hname= (String) request.getSession().getAttribute("hname");
+//        String rcname= (String) request.getSession().getAttribute("rcname");
+//        Integer rid=(Integer) request.getSession().getAttribute("chooseRoom");
+//        String rtype=(String) request.getSession().getAttribute("rtype");
+//        double rprice= (double) request.getSession().getAttribute("rprice");
+//
+//        request.getSession().setAttribute("aid",aid);
+//        request.getSession().setAttribute("hid",hid);
+//        request.getSession().setAttribute("rcid",rcid);
+//        request.setAttribute("rid",rid);
+//        request.setAttribute("aname",aname);
+//        request.setAttribute("aprice",aprice);
+//        request.setAttribute("hname",hname);
+//        request.setAttribute("rprice",rprice);
+//        request.setAttribute("rcname",rcname);
+//        request.setAttribute("rtype",rtype);
     %>
 <%--现在能通过表单传过去的属性是：rid uid ostart_time oend_time ototal_price --%>
 <%--    还缺 aid hid rcid--%>
@@ -144,11 +136,11 @@
                         </div>
                         <div class="col-3">
                                 <label for="rid" class="form-label">房间号</label>
-                            <input type="text" class="form-control" id="rid" name="rid"  readonly="readonly" value="${rid}" placeholder="空">
+                            <input type="text" class="form-control" id="rid" name="rid"  readonly="readonly" value="${chooseRoom}" placeholder="空">
                         </div>
                         <div class="col-3">
                             <label for="rtype" class="form-label">房间类型</label>
-                            <input type="text" class="form-control" id="rtype" name="rtype"  readonly="readonly" value="${rid}" placeholder="空">
+                            <input type="text" class="form-control" id="rtype" name="rtype"  readonly="readonly" value="${rtype}" placeholder="空">
                         </div>
                         <div class="col-3">
                             <label for="rprice" class="form-label">房间单价/日</label>
@@ -173,7 +165,7 @@
                         </div>
                         <div class="my-4"></div>
                         <button class="w-100 btn btn-primary btn-lg" type="submit" id="confirmButton" disabled>确认支付</button>
-                        <a href="index.jsp " ><button class="w-100 btn btn-danger btn-lg" type="button" id="cancelButton" >取消支付</button></a>
+                        <a href="/homeServlet" ><button class="w-100 btn btn-danger btn-lg" type="button" id="cancelButton" >取消支付</button></a>
                     </div>
                 </form>
             </div>

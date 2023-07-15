@@ -75,9 +75,9 @@
                 alert("${registerMsg}");
             }
 
-            if (!${empty filterMsg}&&${empty registerMsg}) {
-                alert("${filterMsg}");
-            }
+            <%--if (!${empty filterMsg}&&${empty registerMsg}) {--%>
+            <%--    alert("${filterMsg}");--%>
+            <%--}--%>
         })
 
     </script>

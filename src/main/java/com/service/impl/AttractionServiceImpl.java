@@ -6,6 +6,7 @@ import com.utils.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
 
 public class AttractionServiceImpl implements AttractionService {
+    //根据景点名称查找景点id
     @Override
     public Integer selectAidByAname(String aname) {
         SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
@@ -13,7 +14,7 @@ public class AttractionServiceImpl implements AttractionService {
         AttractionMapper mapper = session.getMapper(AttractionMapper.class);
         return  mapper.selectAidByAname(aname);
     }
-
+//根据景点名称查找景点价格
     @Override
     public double selectApriceByAname(String aname) {
         SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();

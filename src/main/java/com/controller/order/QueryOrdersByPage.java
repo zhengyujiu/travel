@@ -21,8 +21,11 @@ public class QueryOrdersByPage extends HttpServlet {
         OrderService orderService=new OrderServiceImpl();
         PageBean<Order> pageBean=new PageBean<>();
         String searchName = req.getParameter("searchName");
+        //判断有没有searchName,是否处于特定查找
         if (searchName==null||searchName.isEmpty()){
-            List<Order> orderList = orderService.queryAllOrders();
+           //searchName为空
+            List<Order> orderList = orderService.queryAllOrders(); //查询所有的用户订单
+           //数据库中没有订单
             if (orderList==null||orderList.size()==0){
                 System.out.println(1);
                 pageBean.setTotalCount(0);
@@ -33,9 +36,9 @@ public class QueryOrdersByPage extends HttpServlet {
                 req.getRequestDispatcher(  "beOrder.jsp").forward(req,resp);
             }
             else {
-                System.out.println(2);
                 String pageSize = req.getParameter("pageSize") ;
                 String currentPage =req.getParameter("currentPage") ;
+//                currentPage为null说明这是第一页
                 if (currentPage!=null){
                     pageBean.setCurrentPage(Integer.parseInt(currentPage));
                 }else {
@@ -56,6 +59,7 @@ public class QueryOrdersByPage extends HttpServlet {
             System.out.println("这个时候有了searchName");
             String pageSize = req.getParameter("pageSize") ;
             String currentPage =req.getParameter("currentPage");
+//            currentPage!=null 说明这不是第一页
             if (currentPage!=null){
                 pageBean.setCurrentPage(Integer.parseInt(currentPage));
             }else{
@@ -66,10 +70,12 @@ public class QueryOrdersByPage extends HttpServlet {
             }else {
                 pageBean.setPageSize(5);
             }
+            //通过searchname找出特定的订单
             List<Order> orderList1 = orderService.queryOrderByUname(searchName);
             if (orderList1==null){
                 System.out.println("orderList1 is null");
             }
+            //为pageBean赋list和totalCount
             pageBean = orderService.getOrderByUnameAndPage(pageBean, orderList1, searchName);
             req.setAttribute("pageBean",pageBean);
             req.setAttribute("searchName",searchName);

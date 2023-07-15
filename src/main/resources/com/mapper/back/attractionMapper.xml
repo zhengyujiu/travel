@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.back.attractionMapper">
+
+<!-- 在后台管理员插入时，需要自动生成主键并返回，使用主键自增 -->
+    <insert id="insertOneAttraction" useGeneratedKeys="true" keyColumn="aid">
+        insert into attraction(aname, aaddress, adescription,atype, ascore, aprice,acity,apicture)
+            values (#{aname},#{aaddress},#{adescription},#{atype},#{ascore},#{aprice},#{acity},#{apicture})
+    </insert>
+
+    <update id="updateOneByAttraction">
+        update attraction
+            <set>
+                <if test="aname!=null and aname!=''">
+                    aname=#{aname},
+                </if>
+                <if test="aaddress!=null and aaddress!=''">
+                    aaddress=#{aaddress},
+                </if>
+                <if test="adescription!=null and adescription!=''">
+                    adescription=#{adescription},
+                </if>
+                <if test="atype!=null and atype!=''">
+                    atype=#{atype},
+                </if>
+                <if test="ascore!=null">
+                    ascore=#{ascore},
+                </if>
+                <if test="aprice!=null">
+                    aprice=#{aprice},
+                </if>
+                <if test="acity!=null and acity!=''">
+                    acity=#{acity},
+                </if>
+                <if test="apicture!=null and apicture!=''">
+                    apicture=#{apicture},
+                </if>
+            </set>
+            where aid=#{aid}
+    </update>
+
+    <delete id="deleteOneByAid">
+        delete from attraction where aid=#{aid}
+    </delete>
+
+    <select id="getAllCount" resultType="java.lang.Integer">
+        select count(*) from attraction
+    </select>
+
+<!-- 在查询过程中，只需查除管理员之外的普通用户，不查管理员用户。直接在sql语句中做相应的修改 -->
+    <select id="getAllAttractionInfo" resultType="com.entity.Attraction">
+        select * from attraction limit #{start},#{pageSize}
+    </select>
+
+
+</mapper>

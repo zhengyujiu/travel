@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CollectionMapper">
+    <resultMap id="sqlMap1" type="com.entity.Collections">
+        <id property="clid" column="clid"></id>
+        <result property="hid" column="hid"></result>
+        <result property="uid" column="uid"></result>
+        <result property="rcid" column="rcid"></result>
+        <result property="aid" column="aid"></result>
+        <result property="cltime" column="cltime"></result>
+        <association property="attraction" javaType="com.entity.Attraction" autoMapping="true">
+        </association>
+        <association property="hotel" javaType="com.entity.Hotel" autoMapping="true" >
+        </association>
+        <association property="canteen" javaType="com.entity.Canteen" autoMapping="true" >
+        </association>
+     </resultMap>
+
+    <insert id="addCollection">
+        insert into collections values(null,#{aid},#{uid},#{rcid},#{hid},#{cltime});
+    </insert>
+    <delete id="deleteCollectionByClid">
+        delete from collections where clid=#{clid};
+    </delete>
+
+    <select id="selectCollectionsByUid" resultMap="sqlMap1">
+        SELECT cl.*,a.aname, a.aaddress,a.adescription,a.atype,a.ascore,a.aprice,a.acity,a.apicture,
+               h.hname,h.haddress1,h.hemail,h.hphone,h.hcity,h.hpicture,rc.rcname,rc.rcaddress,rc.rcintroduce,
+               rc.rcphone,rc.rctime,rc.rcpicture,rc.rccity,rc.rcpicture
+        from collections as cl LEFT JOIN attraction as a on cl.aid=a.aid
+                               left join hotel as h on cl.hid=h.hid
+                               left join canteen as rc on cl.rcid=rc.rcid
+        WHERE cl.uid=#{uid};
+    </select>
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.front.commentMapper">
+
+    <insert id="insertOneComment" useGeneratedKeys="true" keyProperty="cid">
+        insert into comment(uid, aid, uscore, cdate, ccontent)
+            VALUES(#{uid},#{aid},#{uscore},#{cdate},#{ccontent})
+    </insert>
+
+    <delete id="deleteOneByCid">
+        delete from comment where cid=#{cid}
+    </delete>
+
+    <select id="getAllCount" resultType="java.lang.Integer">
+        select count(*) from comment where uid=#{uid}
+    </select>
+
+    <resultMap id="sqlMap1" type="com.entity.Comment">
+        <id property="cid" column="cid"></id>
+        <result property="uscore" column="uscore"></result>
+        <result property="cdate" column="cdate"></result>
+        <result property="ccontent" column="ccontent"></result>
+        <association property="comment_attraction">
+            <result property="aname" column="aname"></result>
+        </association>
+    </resultMap>
+
+    <!-- 需要查出每个用户每个评论的景点信息-->
+    <select id="getAllCommentInfo" resultMap="sqlMap1">
+        select c.cid,c.uscore,c.cdate,c.ccontent,a.aname from comment c inner join attraction a
+        where c.aid=a.aid and c.uid=#{uid}
+        limit #{start},#{pageSize}
+    </select>
+
+</mapper>

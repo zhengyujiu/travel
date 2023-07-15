@@ -6,6 +6,7 @@ import com.utils.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
 
 public class HotelServiceImpl implements HotelService {
+//    根据酒店名称查找酒店id
     @Override
     public Integer selectHidByHname(String hname) {
         SqlSessionFactoryUtil sqlSessionFactoryUtil = new SqlSessionFactoryUtil();
