@@ -79,7 +79,6 @@ public class ChangeOrderByOid extends HttpServlet {
                 return;
             }
         }
-
         //检验前端传来的rid是否正确
         //如果管理员没填写酒店,只填了房间号,就让管理员填写酒店信息
         if ((hname==null|| hname.isEmpty())&&rid!=null){
@@ -110,7 +109,6 @@ public class ChangeOrderByOid extends HttpServlet {
                     System.out.println(8);
                     return;
                 }
-
             }
         }
 //判断用户余额是否够

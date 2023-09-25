@@ -25,6 +25,7 @@ public class OneUserOrderList extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         OrderService orderService=new OrderServiceImpl();
+        System.out.println("sessionId:"+req.getSession().getId());
         //判断session中是否有用户的登录信息,如果没有就叫用户先去登录
         if (req.getSession().getAttribute("user")==null){
             String msg="请先登录";

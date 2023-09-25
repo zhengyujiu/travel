@@ -44,12 +44,12 @@ IDEA中使用ctrl+alt+l 来格式化代码
         $(function(){
             if (!${empty msg}){
                 alert("${msg}");
-                <% request.setAttribute("msg",null);%>
+                request.setAttribute("msg","");
             }
-            <%--if (!${empty collectionMsg}){--%>
-            <%--    alert("${collectionMsg}");--%>
-            <%--    <% request.setAttribute("msg",null);%>--%>
-            <%--}--%>
+            if (!${empty collectionMsg}){
+                alert("${collectionMsg}");
+                request.setAttribute("msg","");
+            }
         })
 </script>
 <body>
@@ -82,12 +82,14 @@ IDEA中使用ctrl+alt+l 来格式化代码
                         <li><a href="oneUserOrderList"><span class="glyphicon glyphicon-briefcase"></span> 我的订单</a></li>
                     </ul>
                 </li>
+
                 <c:if test="${requestScope.IsLogin==1}">
-                    <li><a href="logOutServlet" style="position: relative;left: 455px">退出登录</a></li>
+                    <li><a href="logOutServlet" style="position: relative;left: 455px">退出/登录</a></li>
                 </c:if>
-                <c:if test="${requestScope.IsLogin==0}">
-                    <li><a href="logOutServlet" style="position: relative;left: 505px">注册/登录</a></li>
+                <c:if test="${requestScope.IsLogin!=1}">
+                    <li><a href="logOutServlet" style="position: relative;left: 455px">退出/登录</a></li>
                 </c:if>
+
             </ul>
         </div>
     </div>

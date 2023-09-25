@@ -50,7 +50,6 @@
         </tr>
         </thead>
         <tbody>
-
             <tr>
                 <td>${user.uname}</td>
                 <td>${user.upassword}</td>
@@ -60,9 +59,9 @@
                 <td>${user.uemail}</td>
                 <td>${user.ufunds}</td>
             </tr>
-
         </tbody>
     </table>
+    <a class="btn"  href="homeServlet" style="position: relative;left: 450px">返回主页</a>
 </div>
 
 </div>

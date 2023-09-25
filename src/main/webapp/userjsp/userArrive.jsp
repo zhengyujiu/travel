@@ -85,7 +85,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 我的信息</a></li>
+                        <li><a href="myUser.jsp"><span class="glyphicon glyphicon-user"></span> 我的信息</a></li>
                         <li class="divider"></li>
                         <li><a href="myCommentServlet"><span class="glyphicon glyphicon-list-alt"></span> 我的评论</a></li>
                         <li class="divider"></li>
@@ -198,7 +198,7 @@
                         评论
                     </button>
                 </td>
-                <td><a href="addCollectServlet?aid=${attraction.aid}"><span class="glyphicon glyphicon-bookmark"></span>收藏</a></td>
+                <td><a href="addCollectionServlet?aid=${attraction.aid}"><span class="glyphicon glyphicon-bookmark"></span>收藏</a></td>
                 </td>
                     <%-- 如果用户选择了某个景点，则将景点中的所有数据存放到session中，便于订单查询 --%>
                 <td>

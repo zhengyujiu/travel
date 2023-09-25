@@ -80,13 +80,13 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 我的信息</a></li>
+                        <li><a href="myUser.jsp"><span class="glyphicon glyphicon-user"></span> 我的信息</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> 我的评论</a></li>
+                        <li><a href="myCommentServlet"><span class="glyphicon glyphicon-list-alt"></span> 我的评论</a></li>
                         <li class="divider"></li>
                         <li><a href="#"><span class="glyphicon glyphicon-bookmark"></span> 我的收藏</a></li>
                         <li class="divider"></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span> 我的订单</a></li>
+                        <li><a href="oneUserOrderList"><span class="glyphicon glyphicon-briefcase"></span> 我的订单</a></li>
                     </ul>
                 </li>
                 <c:if test="${requestScope.IsLogin==1}">
@@ -175,7 +175,7 @@
                 <td>${canteen.rcprice}</td>
                 <td>${canteen.rccity}</td>
                     <%-- 使用bootstrap字体图标 --%>
-                <td><a href="addCollectServlet?chooseCanteen=${canteen.rcid}"><span class="glyphicon glyphicon-bookmark"></span>收藏</a>
+                <td><a href="addCollectionServlet?chooseCanteen=${canteen.rcid}"><span class="glyphicon glyphicon-bookmark"></span>收藏</a>
                 </td>
                 <td><a href="chooseOrderServlet?chooseCanteen=${canteen.rcid}&rcname=${canteen.rcname}">选择</a></td>
             </tr>

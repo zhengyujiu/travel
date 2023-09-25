@@ -25,6 +25,7 @@ public class AddOrderServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //获得从前端传来的数据
         String uname=req.getParameter("addUname");
+
         String aname=req.getParameter("addAname");
         String hname=req.getParameter("addHname");
         Integer rid=null;

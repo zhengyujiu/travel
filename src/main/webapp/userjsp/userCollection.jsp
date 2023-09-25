@@ -105,7 +105,7 @@
             <button type="submit" CLASS="btn">跳转</button>
         </form>
 
-        <a class="btn" id="allOrdersBtn" href="oneUserCollectionList" >全部订单</a>
+        <a class="btn" id="allOrdersBtn" href="oneUserCollectionList" >全部收藏</a>
         <a class="btn"  href="homeServlet" style="position: relative;left: 300px">返回主页</a>
 
     </div>

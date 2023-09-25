@@ -13,6 +13,5 @@ public class CanteenServiceImpl implements CanteenService {
         SqlSession session = sqlSessionFactoryUtil.getsqlSession();
         CanteenMapper mapper = session.getMapper(CanteenMapper.class);
         return mapper.selectRcidByRcname(rcname);
-
     }
 }
